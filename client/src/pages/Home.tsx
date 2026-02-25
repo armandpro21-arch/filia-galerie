@@ -94,7 +94,7 @@ export default function Home() {
                 Édition Galerie
               </p>
               <h1 className="text-editorial mb-6 leading-tight">
-                La Maison comme Galerie
+                L'intégrale de la maison
               </h1>
               <p className="text-base md:text-lg text-foreground/80 mb-8 leading-relaxed">
                 Découvrez notre collection exclusive de mobilier contemporain. Chaque pièce est une œuvre de design minimaliste, pensée pour créer des espaces de vie intemporels.
