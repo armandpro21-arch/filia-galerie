@@ -26,34 +26,24 @@ export default function Home() {
       {/* Navigation Premium */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="container flex items-center justify-between py-6">
-          <Link href="/">
-            <a className="text-2xl font-serif font-semibold tracking-tight">
-              Filia
-            </a>
-          </Link>
+          <a href="/" className="text-2xl font-serif font-semibold tracking-tight">
+            Filia
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-12">
-            <Link href="/canapes">
-              <a className="text-label hover:text-secondary transition-colors">
-                Canapés
-              </a>
-            </Link>
-            <Link href="/tables">
-              <a className="text-label hover:text-secondary transition-colors">
-                Tables
-              </a>
-            </Link>
-            <Link href="/chaises">
-              <a className="text-label hover:text-secondary transition-colors">
-                Chaises
-              </a>
-            </Link>
-            <Link href="/collection">
-              <a className="text-label hover:text-secondary transition-colors">
-                Collection
-              </a>
-            </Link>
+            <a href="/canapes" className="text-label hover:text-secondary transition-colors">
+              Canapés
+            </a>
+            <a href="/tables" className="text-label hover:text-secondary transition-colors">
+              Tables
+            </a>
+            <a href="/chaises" className="text-label hover:text-secondary transition-colors">
+              Chaises
+            </a>
+            <a href="/collection" className="text-label hover:text-secondary transition-colors">
+              Collection
+            </a>
           </div>
 
           {/* Icons */}
@@ -77,26 +67,18 @@ export default function Home() {
         {isMenuOpen && (
           <div className="md:hidden border-t border-border bg-background">
             <div className="container py-6 space-y-4">
-              <Link href="/canapes">
-                <a className="block text-label hover:text-secondary transition-colors">
-                  Canapés
-                </a>
-              </Link>
-              <Link href="/tables">
-                <a className="block text-label hover:text-secondary transition-colors">
-                  Tables
-                </a>
-              </Link>
-              <Link href="/chaises">
-                <a className="block text-label hover:text-secondary transition-colors">
-                  Chaises
-                </a>
-              </Link>
-              <Link href="/collection">
-                <a className="block text-label hover:text-secondary transition-colors">
-                  Collection
-                </a>
-              </Link>
+              <a href="/canapes" className="block text-label hover:text-secondary transition-colors">
+                Canapés
+              </a>
+              <a href="/tables" className="block text-label hover:text-secondary transition-colors">
+                Tables
+              </a>
+              <a href="/chaises" className="block text-label hover:text-secondary transition-colors">
+                Chaises
+              </a>
+              <a href="/collection" className="block text-label hover:text-secondary transition-colors">
+                Collection
+              </a>
             </div>
           </div>
         )}
@@ -157,61 +139,55 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {/* Collection Card 1 */}
-            <Link href="/collection/canapes">
-              <a className="group cursor-pointer">
-                <div className="relative overflow-hidden mb-6 aspect-square">
-                  <img
-                    src="https://private-us-east-1.manuscdn.com/sessionFile/kipTDJQqissckqbzLIMUU1/sandbox/OS1WirmdDyjqb8kJ9JryT1-img-3_1772014671000_na1fn_Z2FsbGVyeS1jb2xsZWN0aW9u.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUva2lwVERKUXFpc3Nja3FiekxJTVVVMS9zYW5kYm94L09TMVdpcm1kRHlqcWI4a0o5SnJ5VDEtaW1nLTNfMTc3MjAxNDY3MTAwMF9uYTFmbl9aMkZzYkdWeWVTMWpiMjxzWldOMGFXOXUucG5nP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=ujLIHLyd-0ke0vI0kvAo1B4YulX0utL9GEK-h28biDb9BkTT4L3pgbF5qD1gHeAwWAWUJq7SY0QyiDxyW1FoCsJ1gbF1OcM1cSFqofXJ88Q48hvLqN-PmxS6qzlF-knmMqM5KilYDoGWBLl-yF6-o49FXzGlend4JGS3IVe6o4JyQ47szNFZMjDugb-AYrCjo9yTV77FnByT5aAfVMYZPgqigPJqj2e-Z3-oHYFHu9FHMeK0oEYuSOofesHKGtnAaUOp59lN9kkHVjUEpf-aJ5Qw10RDyTVo~65cGMvaupsqH3H3CYBhOSe2NqiJQW5le7NMIi2JyipPvVlkg1scYQ__"
-                    alt="Collection Canapés"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-                <h3 className="text-editorial text-xl mb-2 group-hover:text-secondary transition-colors">
-                  Canapés
-                </h3>
-                <p className="text-foreground/60 text-sm">
-                  Sièges de prestige pour vos espaces de vie
-                </p>
-              </a>
-            </Link>
+            <a href="/collection/canapes" className="group cursor-pointer block">
+              <div className="relative overflow-hidden mb-6 aspect-square">
+                <img
+                  src="https://private-us-east-1.manuscdn.com/sessionFile/kipTDJQqissckqbzLIMUU1/sandbox/OS1WirmdDyjqb8kJ9JryT1-img-3_1772014671000_na1fn_Z2FsbGVyeS1jb2xsZWN0aW9u.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUva2lwVERKUXFpc3Nja3FiekxJTVVVMS9zYW5kYm94L09TMVdpcm1kRHlqcWI4a0o5SnJ5VDEtaW1nLTNfMTc3MjAxNDY3MTAwMF9uYTFmbl9aMkZzYkdWeWVTMWpiMjxzWldOMGFXOXUucG5nP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=ujLIHLyd-0ke0vI0kvAo1B4YulX0utL9GEK-h28biDb9BkTT4L3pgbF5qD1gHeAwWAWUJq7SY0QyiDxyW1FoCsJ1gbF1OcM1cSFqofXJ88Q48hvLqN-PmxS6qzlF-knmMqM5KilYDoGWBLl-yF6-o49FXzGlend4JGS3IVe6o4JyQ47szNFZMjDugb-AYrCjo9yTV77FnByT5aAfVMYZPgqigPJqj2e-Z3-oHYFHu9FHMeK0oEYuSOofesHKGtnAaUOp59lN9kkHVjUEpf-aJ5Qw10RDyTVo~65cGMvaupsqH3H3CYBhOSe2NqiJQW5le7NMIi2JyipPvVlkg1scYQ__"
+                  alt="Collection Canapés"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+              <h3 className="text-editorial text-xl mb-2 group-hover:text-secondary transition-colors">
+                Canapés
+              </h3>
+              <p className="text-foreground/60 text-sm">
+                Sièges de prestige pour vos espaces de vie
+              </p>
+            </a>
 
             {/* Collection Card 2 */}
-            <Link href="/collection/tables">
-              <a className="group cursor-pointer">
-                <div className="relative overflow-hidden mb-6 aspect-square">
-                  <img
-                    src="https://private-us-east-1.manuscdn.com/sessionFile/kipTDJQqissckqbzLIMUU1/sandbox/OS1WirmdDyjqb8kJ9JryT1-img-4_1772014679000_na1fn_d29vZC10ZXh0dXJlLWRldGFpbA.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUva2lwVERKUXFpc3Nja3FiekxJTVVVMS9zYW5kYm94L09TMVdpcm1kRHlqcWI4a0o5SnJ5VDEtaW1nLTRfMTc3MjAxNDY3OTAwMF9uYTFmbl9kMjl2WkMxMFpYaDBkWEpsTFdSbGRHRnBiQS5wbmc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=WDd8qmQAnJRDrJujzlWxswHHtRNexWkFRx8iFOQ9HQpP43d7IT6zxS3kGItgWY2oxICGVVdL0CXLkSVNpTEDYYjaeFkORuZsQL~Iyi5TGaA7CZ5Viz8yL130bObpbyNP~D~0tKB3C2npocxpTD1AXBuaEZHkkS0uuEeshw9CJAqPWqnIslyG8Toq75plgez7hBKsi3T-ewXodZBEOFNPqK2ZlQpRuIBNkrysst9-nqUzSMNOPrQ1lMG83aUMHOM2HaoVd2vKTwVYh9avEPXr9rpg-dO9hGnhJCZ7EMxmto5~9H5ArsKb1wF0kDExtK33BmrlulRvTui~8WF1hUjxgA__"
-                    alt="Collection Tables"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-                <h3 className="text-editorial text-xl mb-2 group-hover:text-secondary transition-colors">
-                  Tables
-                </h3>
-                <p className="text-foreground/60 text-sm">
-                  Pièces centrales en bois massif et matériaux nobles
-                </p>
-              </a>
-            </Link>
+            <a href="/collection/tables" className="group cursor-pointer block">
+              <div className="relative overflow-hidden mb-6 aspect-square">
+                <img
+                  src="https://private-us-east-1.manuscdn.com/sessionFile/kipTDJQqissckqbzLIMUU1/sandbox/OS1WirmdDyjqb8kJ9JryT1-img-4_1772014679000_na1fn_d29vZC10ZXh0dXJlLWRldGFpbA.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUva2lwVERKUXFpc3Nja3FiekxJTVVVMS9zYW5kYm94L09TMVdpcm1kRHlqcWI4a0o5SnJ5VDEtaW1nLTRfMTc3MjAxNDY3OTAwMF9uYTFmbl9kMjl2WkMxMFpYaDBkWEpsTFdSbGRHRnBiQS5wbmc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=WDd8qmQAnJRDrJujzlWxswHHtRNexWkFRx8iFOQ9HQpP43d7IT6zxS3kGItgWY2oxICGVVdL0CXLkSVNpTEDYYjaeFkORuZsQL~Iyi5TGaA7CZ5Viz8yL130bObpbyNP~D~0tKB3C2npocxpTD1AXBuaEZHkkS0uuEeshw9CJAqPWqnIslyG8Toq75plgez7hBKsi3T-ewXodZBEOFNPqK2ZlQpRuIBNkrysst9-nqUzSMNOPrQ1lMG83aUMHOM2HaoVd2vKTwVYh9avEPXr9rpg-dO9hGnhJCZ7EMxmto5~9H5ArsKb1wF0kDExtK33BmrlulRvTui~8WF1hUjxgA__"
+                  alt="Collection Tables"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+              <h3 className="text-editorial text-xl mb-2 group-hover:text-secondary transition-colors">
+                Tables
+              </h3>
+              <p className="text-foreground/60 text-sm">
+                Pièces centrales en bois massif et matériaux nobles
+              </p>
+            </a>
 
             {/* Collection Card 3 */}
-            <Link href="/collection/chaises">
-              <a className="group cursor-pointer">
-                <div className="relative overflow-hidden mb-6 aspect-square">
-                  <img
-                    src="https://private-us-east-1.manuscdn.com/sessionFile/kipTDJQqissckqbzLIMUU1/sandbox/OS1WirmdDyjqb8kJ9JryT1-img-5_1772014683000_na1fn_bWluaW1hbGlzdC1iZWRyb29t.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUva2lwVERKUXFpc3Nja3FiekxJTVVVMS9zYW5kYm94L09TMVdpcm1kRHlqcWI4a0o5SnJ5VDEtaW1nLTVfMTc3MjAxNDY4MzAwMF9uYTFmbl9iV2x1YVcxaGJHbHpkQzFpWldSeWIyOXQucG5nP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=QItGMT41XdeeOyb9dv2Sc-ZddaudTa5bTjRbCRGWA6xjb1hXtv8cyPfVnbDu4aKtoQ1GtwysN5pTTdw9UHfZ79tS-IlD62DPDRpCeyGPXaKg1wJzV~AfRTnszfxvsPdzlwS5g~~X4lCClv3HQc~oltfxYV5mw57EuZjcXKIujsbzQCQTtYHLUjI5fKhzivbQ5lJr15XtGti~M2qvcr6THpxcESpOn~0YYRe8U6DgQxOMer5~VndUxy8o387eSdZ2DzoRo8ZJDk2MmrXsmpinwuRHxm4XdD3M7BUakWGurFq1ourd~nb7FG1OT4NDu-Gmq-DRqj2lMRCokoPGWM9GVA__"
-                    alt="Collection Chaises"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-                <h3 className="text-editorial text-xl mb-2 group-hover:text-secondary transition-colors">
-                  Chaises
-                </h3>
-                <p className="text-foreground/60 text-sm">
-                  Sièges de design contemporain pour tous les espaces
-                </p>
-              </a>
-            </Link>
+            <a href="/collection/chaises" className="group cursor-pointer block">
+              <div className="relative overflow-hidden mb-6 aspect-square">
+                <img
+                  src="https://private-us-east-1.manuscdn.com/sessionFile/kipTDJQqissckqbzLIMUU1/sandbox/OS1WirmdDyjqb8kJ9JryT1-img-5_1772014683000_na1fn_bWluaW1hbGlzdC1iZWRyb29t.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUva2lwVERKUXFpc3Nja3FiekxJTVVVMS9zYW5kYm94L09TMVdpcm1kRHlqcWI4a0o5SnJ5VDEtaW1nLTVfMTc3MjAxNDY4MzAwMF9uYTFmbl9iV2x1YVcxaGJHbHpkQzFpWldSeWIyOXQucG5nP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=QItGMT41XdeeOyb9dv2Sc-ZddaudTa5bTjRbCRGWA6xjb1hXtv8cyPfVnbDu4aKtoQ1GtwysN5pTTdw9UHfZ79tS-IlD62DPDRpCeyGPXaKg1wJzV~AfRTnszfxvsPdzlwS5g~~X4lCClv3HQc~oltfxYV5mw57EuZjcXKIujsbzQCQTtYHLUjI5fKhzivbQ5lJr15XtGti~M2qvcr6THpxcESpOn~0YYRe8U6DgQxOMer5~VndUxy8o387eSdZ2DzoRo8ZJDk2MmrXsmpinwuRHxm4XdD3M7BUakWGurFq1ourd~nb7FG1OT4NDu-Gmq-DRqj2lMRCokoPGWM9GVA__"
+                  alt="Collection Chaises"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+              <h3 className="text-editorial text-xl mb-2 group-hover:text-secondary transition-colors">
+                Chaises
+              </h3>
+              <p className="text-foreground/60 text-sm">
+                Sièges de design contemporain pour tous les espaces
+              </p>
+            </a>
           </div>
         </div>
       </section>
@@ -241,12 +217,10 @@ export default function Home() {
               <p className="text-base md:text-lg text-foreground/80 mb-8 leading-relaxed">
                 Notre engagement envers l'artisanat traditionnel se reflète dans chaque couture, chaque finition, chaque grain de bois visible.
               </p>
-              <Link href="/collection">
-                <a className="btn-premium inline-block">
-                  Découvrir nos Matériaux
-                  <ChevronRight className="inline ml-2" size={16} />
-                </a>
-              </Link>
+              <a href="/collection" className="btn-premium inline-block">
+                Découvrir nos Matériaux
+                <ChevronRight className="inline ml-2" size={16} />
+              </a>
             </div>
           </div>
         </div>
@@ -266,25 +240,19 @@ export default function Home() {
               <h4 className="text-label mb-6">Collections</h4>
               <ul className="space-y-3 text-sm">
                 <li>
-                  <Link href="/collection/canapes">
-                    <a className="hover:text-secondary transition-colors">
-                      Canapés
-                    </a>
-                  </Link>
+                  <a href="/collection/canapes" className="hover:text-secondary transition-colors">
+                    Canapés
+                  </a>
                 </li>
                 <li>
-                  <Link href="/collection/tables">
-                    <a className="hover:text-secondary transition-colors">
-                      Tables
-                    </a>
-                  </Link>
+                  <a href="/collection/tables" className="hover:text-secondary transition-colors">
+                    Tables
+                  </a>
                 </li>
                 <li>
-                  <Link href="/collection/chaises">
-                    <a className="hover:text-secondary transition-colors">
-                      Chaises
-                    </a>
-                  </Link>
+                  <a href="/collection/chaises" className="hover:text-secondary transition-colors">
+                    Chaises
+                  </a>
                 </li>
               </ul>
             </div>
