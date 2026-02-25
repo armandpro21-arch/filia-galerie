@@ -26,22 +26,22 @@ export default function Home() {
       {/* Navigation Premium */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="container flex items-center justify-between py-6">
-          <a href="/" className="text-xl md:text-2xl font-serif font-bold tracking-tight hover:opacity-80 transition-opacity" style={{fontFamily: 'Bodoni', marginLeft: '-97px', marginLeft: '-129px', fontSize: '23px', fontSize: '22px'}}>
+          <a href="/" className="text-xl md:text-2xl font-serif font-bold tracking-tight hover:opacity-80 transition-opacity" style={{fontFamily: 'Bodoni'}}>
             Filia appartement furnitures
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-12" style={{marginLeft: '-20px'}}>
-            <a href="/canapes" className="text-label hover:text-secondary transition-colors" style={{fontSize: '13px'}}>
+          <div className="hidden md:flex items-center gap-12">
+            <a href="/canapes" className="text-label hover:text-secondary transition-colors">
               Canapés
             </a>
-            <a href="/tables" className="text-label hover:text-secondary transition-colors" style={{fontSize: '13px'}}>
+            <a href="/tables" className="text-label hover:text-secondary transition-colors">
               Tables
             </a>
-            <a href="/chaises" className="text-label hover:text-secondary transition-colors" style={{fontSize: '13px'}}>
+            <a href="/chaises" className="text-label hover:text-secondary transition-colors">
               Chaises
             </a>
-            <a href="/collection" className="text-label hover:text-secondary transition-colors" style={{fontSize: '13px'}}>
+            <a href="/collection" className="text-label hover:text-secondary transition-colors">
               Collection
             </a>
           </div>
