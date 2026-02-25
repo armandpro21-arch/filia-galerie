@@ -100,12 +100,10 @@ export default function Home() {
                 Découvrez notre collection exclusive de mobilier contemporain. Chaque pièce est une œuvre de design minimaliste, pensée pour créer des espaces de vie intemporels.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/collection">
-                  <a className="btn-premium text-center">
-                    Découvrir
-                    <ChevronRight className="inline ml-2" size={16} />
-                  </a>
-                </Link>
+                <a href="/collection" className="btn-premium text-center">
+                  Découvrir
+                  <ChevronRight className="inline ml-2" size={16} />
+                </a>
                 <button className="btn-premium-secondary">
                   Explorer les Nouveautés
                 </button>

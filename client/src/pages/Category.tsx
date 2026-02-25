@@ -77,17 +77,13 @@ export default function Category() {
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="container flex items-center justify-between py-6">
-          <Link href="/">
-            <a className="text-2xl font-serif font-semibold tracking-tight">
-              Filia
-            </a>
-          </Link>
-          <Link href="/">
-            <a className="text-label hover:text-secondary transition-colors">
-              <ChevronLeft className="inline mr-2" size={16} />
-              Retour
-            </a>
-          </Link>
+          <a href="/" className="text-2xl font-serif font-semibold tracking-tight">
+            Filia
+          </a>
+          <a href="/" className="text-label hover:text-secondary transition-colors">
+            <ChevronLeft className="inline mr-2" size={16} />
+            Retour
+          </a>
         </div>
       </nav>
 
@@ -218,25 +214,19 @@ export default function Category() {
               <h4 className="text-label mb-6">Collections</h4>
               <ul className="space-y-3 text-sm">
                 <li>
-                  <Link href="/collection/canapes">
-                    <a className="hover:text-secondary transition-colors">
-                      Canapés
-                    </a>
-                  </Link>
+                  <a href="/collection/canapes" className="hover:text-secondary transition-colors">
+                    Canapés
+                  </a>
                 </li>
                 <li>
-                  <Link href="/collection/tables">
-                    <a className="hover:text-secondary transition-colors">
-                      Tables
-                    </a>
-                  </Link>
+                  <a href="/collection/tables" className="hover:text-secondary transition-colors">
+                    Tables
+                  </a>
                 </li>
                 <li>
-                  <Link href="/collection/chaises">
-                    <a className="hover:text-secondary transition-colors">
-                      Chaises
-                    </a>
-                  </Link>
+                  <a href="/collection/chaises" className="hover:text-secondary transition-colors">
+                    Chaises
+                  </a>
                 </li>
               </ul>
             </div>

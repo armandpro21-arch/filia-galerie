@@ -70,9 +70,7 @@ export default function Product() {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-serif mb-4">Produit non trouvé</h1>
-          <Link href="/">
-            <a className="btn-premium">Retour à l'accueil</a>
-          </Link>
+          <a href="/" className="btn-premium">Retour à l'accueil</a>
         </div>
       </div>
     );
@@ -83,17 +81,13 @@ export default function Product() {
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="container flex items-center justify-between py-6">
-          <Link href="/">
-            <a className="text-2xl font-serif font-semibold tracking-tight">
-              Filia
-            </a>
-          </Link>
-          <Link href="/">
-            <a className="text-label hover:text-secondary transition-colors">
-              <ChevronLeft className="inline mr-2" size={16} />
-              Retour
-            </a>
-          </Link>
+          <a href="/" className="text-2xl font-serif font-semibold tracking-tight">
+            Filia
+          </a>
+          <a href="/" className="text-label hover:text-secondary transition-colors">
+            <ChevronLeft className="inline mr-2" size={16} />
+            Retour
+          </a>
         </div>
       </nav>
 
