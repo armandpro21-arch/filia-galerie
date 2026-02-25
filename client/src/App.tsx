@@ -12,7 +12,7 @@ import Product from "./pages/Product";
 function Router() {
   return (
     <Switch>
-      <Route path={"/ "} component={Home} />
+      <Route path={"/"} component={Home} />
       <Route path={"/collection/:category"} component={Category} />
       <Route path={"/product/:id"} component={Product} />
       <Route path={"/404"} component={NotFound} />
