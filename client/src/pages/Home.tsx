@@ -26,8 +26,8 @@ export default function Home() {
       {/* Navigation Premium */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="container flex items-center justify-between py-6">
-          <a href="/" className="text-xl md:text-2xl font-serif font-bold tracking-tight hover:opacity-80 transition-opacity">
-            Filia
+          <a href="/" className="text-xl md:text-2xl font-serif font-bold tracking-tight hover:opacity-80 transition-opacity" style={{marginLeft: '-119px', fontFamily: 'Bodoni'}}>
+            Filia appartement furnitures
           </a>
 
           {/* Desktop Navigation */}
