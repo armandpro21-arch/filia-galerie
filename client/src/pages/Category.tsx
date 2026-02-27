@@ -18,7 +18,7 @@ const PRODUCTS = {
       description: "Canapé 3 places en lin naturel avec structure en chêne massif",
       price: "€3,200",
       image:
-        "https://private-us-east-1.manuscdn.com/sessionFile/kipTDJQqissckqbzLIMUU1/sandbox/OS1WirmdDyjqb8kJ9JryT1-img-1_1772014678000_na1fn_aGVyby1saXZpbmctcm9vbQ.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUva2lwVERKUXFpc3Nja3FiekxJTVVVMS9zYW5kYm94L09TMVdpcm1kRHlqcWI4a0o5SnJ5VDEtaW1nLTFfMTc3MjAxNDY3ODAwMF9uYTFmbl9hR1Z5Ynkxc2FYWnBibWN0Y201dmJRLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=BtJVsqjolFLEKeJcuOgbIiV1MxSWfEEU1BEUFTveeocTitJzx52-9LknPPpLrwoz4YSgAX1cq7wlIJvdru-5eldvjnz~pS273NX9ynHsW4fllvXP8hbHXvGhdCCshWhjovus8wcCnlpBv8Xh7-sctqRstf6A1Id6oIiFxUjAAxJ74GEI-ECpUqc1kOOn8DCpGu10TGLrQRnV-5THS3cEVAyz18HM4DtNaPMnc00MjRPw9kfB381B6jTDHGzba8lbyhp1ELbFCcoX1kEZh35lC1pEikb87pCy-Ztc5LMyH4ZMderP2HcpzkCiKHPkpeSFyG9-IjxH-CU6ethdF-MVTQ__",
+        "https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/hero-living-room_5971783a.png",
       materials: "Lin 100%, Chêne massif",
       dimensions: "220 × 90 × 85 cm",
     },
@@ -28,7 +28,7 @@ const PRODUCTS = {
       description: "Composition modulable avec accoudoirs en bois",
       price: "€4,500",
       image:
-        "https://private-us-east-1.manuscdn.com/sessionFile/kipTDJQqissckqbzLIMUU1/sandbox/OS1WirmdDyjqb8kJ9JryT1-img-5_1772014683000_na1fn_bWluaW1hbGlzdC1iZWRyb29t.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUva2lwVERKUXFpc3Nja3FiekxJTVVVMS9zYW5kYm94L09TMVdpcm1kRHlqcWI4a0o5SnJ5VDEtaW1nLTVfMTc3MjAxNDY4MzAwMF9uYTFmbl9iV2x1YVcxaGJHbHpkQzFpWldSeWIyOXQucG5nP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=QItGMT41XdeeOyb9dv2Sc-ZddaudTa5bTjRbCRGWA6xjb1hXtv8cyPfVnbDu4aKtoQ1GtwysN5pTTdw9UHfZ79tS-IlD62DPDRpCeyGPXaKg1wJzV~AfRTnszfxvsPdzlwS5g~~X4lCClv3HQc~oltfxYV5mw57EuZjcXKIujsbzQCQTtYHLUjI5fKhzivbQ5lJr15XtGti~M2qvcr6THpxcESpOn~0YYRe8U6DgQxOMer5~VndUxy8o387eSdZ2DzoRo8ZJDk2MmrXsmpinwuRHxm4XdD3M7BUakWGurFq1ourd~nb7FG1OT4NDu-Gmq-DRqj2lMRCokoPGWM9GVA__",
+        "https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/minimalist-bedroom_2dfe9d97.png",
       materials: "Lin 100%, Chêne massif",
       dimensions: "280 × 120 × 85 cm",
     },
@@ -40,7 +40,7 @@ const PRODUCTS = {
       description: "Table basse en chêne clair avec plateau minimaliste",
       price: "€1,800",
       image:
-        "https://private-us-east-1.manuscdn.com/sessionFile/kipTDJQqissckqbzLIMUU1/sandbox/OS1WirmdDyjqb8kJ9JryT1-img-4_1772014679000_na1fn_d29vZC10ZXh0dXJlLWRldGFpbA.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUva2lwVERKUXFpc3Nja3FiekxJTVVVMS9zYW5kYm94L09TMVdpcm1kRHlqcWI4a0o5SnJ5VDEtaW1nLTRfMTc3MjAxNDY3OTAwMF9uYTFmbl9kMjl2WkMxMFpYaDBkWEpsTFdSbGRHRnBiQS5wbmc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=WDd8qmQAnJRDrJujzlWxswHHtRNexWkFRx8iFOQ9HQpP43d7IT6zxS3kGItgWY2oxICGVVdL0CXLkSVNpTEDYYjaeFkORuZsQL~Iyi5TGaA7CZ5Viz8yL130bObpbyNP~D~0tKB3C2npocxpTD1AXBuaEZHkkS0uuEeshw9CJAqPWqnIslyG8Toq75plgez7hBKsi3T-ewXodZBEOFNPqK2ZlQpRuIBNkrysst9-nqUzSMNOPrQ1lMG83aUMHOM2HaoVd2vKTwVYh9avEPXr9rpg-dO9hGnhJCZ7EMxmto5~9H5ArsKb1wF0kDExtK33BmrlulRvTui~8WF1hUjxgA__",
+        "https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/wood-texture-detail_ae5828ff.png",
       materials: "Chêne massif",
       dimensions: "120 × 60 × 40 cm",
     },
@@ -49,7 +49,7 @@ const PRODUCTS = {
       name: "Table Salle à Manger Oak",
       description: "Table de salle à manger en chêne clair avec structure épurée",
       price: "€2,400",
-      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/product-table-oak-minimal-iA82FHo84TXRsiMqevcrA5.webp",
+      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/product-table-oak-minimal_e3ba5910.png",
       materials: "Chêne massif, Finition naturelle",
       dimensions: "180 × 90 × 75 cm",
     },
@@ -61,7 +61,7 @@ const PRODUCTS = {
       description: "Chaise de salle à manger en bois avec assise en lin",
       price: "€680",
       image:
-        "https://private-us-east-1.manuscdn.com/sessionFile/kipTDJQqissckqbzLIMUU1/sandbox/OS1WirmdDyjqb8kJ9JryT1-img-3_1772014671000_na1fn_Z2FsbGVyeS1jb2xsZWN0aW9u.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUva2lwVERKUXFpc3Nja3FiekxJTVVVMS9zYW5kYm94L09TMVdpcm1kRHlqcWI4a0o5SnJ5VDEtaW1nLTNfMTc3MjAxNDY3MTAwMF9uYTFmbl9aMkZzYkdWeWVTMWpiMjxzWldOMGFXOXUucG5nP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=ujLIHLyd-0ke0vI0kvAo1B4YulX0utL9GEK-h28biDb9BkTT4L3pgbF5qD1gHeAwWAWUJq7SY0QyiDxyW1FoCsJ1gbF1OcM1cSFqofXJ88Q48hvLqN-PmxS6qzlF-knmMqM5KilYDoGWBLl-yF6-o49FXzGlend4JGS3IVe6o4JyQ47szNFZMjDugb-AYrCjo9yTV77FnByT5aAfVMYZPgqigPJqj2e-Z3-oHYFHu9FHMeK0oEYuSOofesHKGtnAaUOp59lN9kkHVjUEpf-aJ5Qw10RDyTVo~65cGMvaupsqH3H3CYBhOSe2NqiJQW5le7NMIi2JyipPvVlkg1scYQ__",
+        "https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/gallery-collection_946ffda0.png",
       materials: "Chêne, Lin 100%",
       dimensions: "50 × 50 × 85 cm",
     },
@@ -70,7 +70,7 @@ const PRODUCTS = {
       name: "Chaise Contemporaine Bois",
       description: "Chaise design avec backrest organique et structure épurée",
       price: "€850",
-      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/product-chair-natural-wood-649so849Uuxn5PmwMk3b7R.webp",
+      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/product-chair-natural-wood_5c15543e.png",
       materials: "Chêne massif, Finition naturelle",
       dimensions: "55 × 52 × 82 cm",
     },

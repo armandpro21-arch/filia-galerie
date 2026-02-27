@@ -119,7 +119,7 @@ export default function Home() {
             }}
           >
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-salon-minimal-sKmQjFnPxLvRhT2wBqNxvD.webp"
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-salon-minimal_b1a21b17.png"
               alt="Salon minimaliste luxe"
               className="w-full h-full object-cover"
             />
@@ -141,7 +141,7 @@ export default function Home() {
             <article className="group cursor-pointer">
               <div className="relative overflow-hidden mb-6 aspect-square">
                 <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-salon-minimal-sKmQjFnPxLvRhT2wBqNxvD.webp"
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-salon-minimal_b1a21b17.png"
                   alt="Salon Minimal"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -154,7 +154,7 @@ export default function Home() {
             <article className="group cursor-pointer">
               <div className="relative overflow-hidden mb-6 aspect-square">
                 <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-chambre-apaisee-KxWqPmLnRsT9vBcDfGhJkL.webp"
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-chambre-apaisee_2a07bb46.png"
                   alt="Chambre Apaisée"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -167,7 +167,7 @@ export default function Home() {
             <article className="group cursor-pointer">
               <div className="relative overflow-hidden mb-6 aspect-square">
                 <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-matieres-naturelles-WxYzAbCdEfGhIjKlMnOpQr.webp"
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-matieres-naturelles_42cfcee3.png"
                   alt="Matières Naturelles"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -180,7 +180,7 @@ export default function Home() {
             <article className="group cursor-pointer">
               <div className="relative overflow-hidden mb-6 aspect-square">
                 <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-bois-clair-StUvWxYzAbCdEfGhIjKlMn.webp"
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-bois-clair_1166c0c8.png"
                   alt="Bois Clair"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -193,7 +193,7 @@ export default function Home() {
             <article className="group cursor-pointer">
               <div className="relative overflow-hidden mb-6 aspect-square">
                 <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-interieur-lumineux-OpQrStUvWxYzAbCdEfGhIj.webp"
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-interieur-lumineux_6d530b15.png"
                   alt="Intérieur Lumineux"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -206,7 +206,7 @@ export default function Home() {
             <article className="group cursor-pointer">
               <div className="relative overflow-hidden mb-6 aspect-square">
                 <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-ligne-contemporaine-Tnkx82SJgnW6g5AJXqqqo2.webp"
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-ligne-contemporaine_b1eda3db.png"
                   alt="Ligne Contemporaine"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -219,7 +219,7 @@ export default function Home() {
             <article className="group cursor-pointer">
               <div className="relative overflow-hidden mb-6 aspect-square">
                 <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-collection-essentielle-E8VmuTwt9hNqtbpYBhowqG.webp"
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-collection-essentielle_94e5a031.png"
                   alt="Collection Essentielle"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -232,7 +232,7 @@ export default function Home() {
             <article className="group cursor-pointer">
               <div className="relative overflow-hidden mb-6 aspect-square">
                 <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-espace-travail-iAPa58gT2DSuZjpusGmw5H.webp"
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-espace-travail_253bbfe6.png"
                   alt="Espace Travail"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -251,7 +251,7 @@ export default function Home() {
             {/* Image */}
             <div className="order-2 md:order-1">
               <img
-                src="https://private-us-east-1.manuscdn.com/sessionFile/kipTDJQqissckqbzLIMUU1/sandbox/OS1WirmdDyjqb8kJ9JryT1-img-2_1772014683000_na1fn_cHJvZHVjdC1zb2ZhLWRldGFpbA.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUva2lwVERKUXFpc3Nja3FiekxJTVVVMS9zYW5kYm94L09TMVdpcm1kRHlqcWI4a0o5SnJ5VDEtaW1nLTJfMTc3MjAxNDY4MzAwMF9uYTFmbl9jSEp2WkhWamRDMXpiMjxoTFdSbGRHRnBiQS5wbmc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=dlvMmDxZKmauC7AR-nlHbgGjORH6k5Sv0FoHKQubjARO~KKM6K1ndwWA1vbR28PQNVi-9B6gDrvLMmewrk3smLZUnyyJiw8bxMsU7VaXWy4NvLKuB1iM3Jf85BiwWEJE1p-UMlzZAm6C8OvAPO-hIliVON3gaeTszJnEjr3g31WNCCLVLfsvd2DLS7b8mhz-14ycMFEJukpDTO2CWkgAe4QJfhz-~yUBmUlWmy~77SboYoETwTSJ~vqJeM5sVUwkmHwbVoVKehtuuTyHv-5S8P~~z7yHETUemWGrug1Qr5ak6R1j24~1znjgyu~B65hFYabUjJudyTvghuGLuQkqUw__"
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/product-sofa-detail_ff94bbe4.png"
                 alt="Détail matière - Texture bois"
                 className="w-full h-auto"
               />
@@ -302,7 +302,7 @@ export default function Home() {
             <article className="group">
               <div className="relative overflow-hidden mb-6 aspect-video">
                 <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/ambiance-bedroom-warm-light-58CnTNvVvwdz2HMx8HdrBT.webp"
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/ambiance-bedroom-warm-light_84d966b4.png"
                   alt="Chambre minimaliste"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -320,7 +320,7 @@ export default function Home() {
             <article className="group">
               <div className="relative overflow-hidden mb-6 aspect-video">
                 <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/ambiance-living-room-wood-floor-NTYX3cLi77rLHZbd4QDsuR.webp"
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/ambiance-living-room-wood-floor_30c2f836.png"
                   alt="Salon contemporain"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -338,7 +338,7 @@ export default function Home() {
             <article className="group">
               <div className="relative overflow-hidden mb-6 aspect-video">
                 <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/product-storage-cabinet-wood-4g8A35XtEfRkdDgTzBmkPB.webp"
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/product-storage-cabinet-wood_6446dd49.png"
                   alt="Rangement bois"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />

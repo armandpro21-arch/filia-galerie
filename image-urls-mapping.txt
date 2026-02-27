@@ -1,0 +1,28 @@
+IMAGE URLS MAPPING FOR FILIA GALERIE
+=====================================
+
+UNIVERS IMAGES (8 total):
+1. univers-salon-minimal.png -> https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-salon-minimal_b1a21b17.png
+2. univers-chambre-apaisee.png -> https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-chambre-apaisee_2a07bb46.png
+3. univers-matieres-naturelles.png -> https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-matieres-naturelles_42cfcee3.png
+4. univers-bois-clair.png -> https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-bois-clair_1166c0c8.png
+5. univers-interieur-lumineux.png -> https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-interieur-lumineux_6d530b15.png
+6. univers-ligne-contemporaine.png -> https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-ligne-contemporaine_b1eda3db.png
+7. univers-collection-essentielle.png -> https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-collection-essentielle_94e5a031.png
+8. univers-espace-travail.png -> https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-espace-travail_253bbfe6.png
+
+HERO & AMBIANCE IMAGES:
+- hero-living-room.png -> https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/hero-living-room_5971783a.png
+- ambiance-living-room-wood-floor.png -> https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/ambiance-living-room-wood-floor_30c2f836.png
+- ambiance-bedroom-warm-light.png -> https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/ambiance-bedroom-warm-light_84d966b4.png
+- minimalist-bedroom.png -> https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/minimalist-bedroom_2dfe9d97.png
+- gallery-collection.png -> https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/gallery-collection_946ffda0.png
+- wood-texture-detail.png -> https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/wood-texture-detail_ae5828ff.png
+
+PRODUCT IMAGES (4 total):
+- product-sofa-detail.png -> https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/product-sofa-detail_ff94bbe4.png
+- product-table-oak-minimal.png -> https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/product-table-oak-minimal_e3ba5910.png
+- product-chair-natural-wood.png -> https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/product-chair-natural-wood_5c15543e.png
+- product-storage-cabinet-wood.png -> https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/product-storage-cabinet-wood_6446dd49.png
+
+TOTAL: 18 images uploaded successfully
