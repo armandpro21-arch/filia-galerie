@@ -30,8 +30,8 @@ export default function Home() {
             Filia appartement furnitures
           </a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-12">
+          {/* Desktop Navigation - Centered */}
+          <div className="hidden md:flex items-center gap-12 absolute left-1/2 transform -translate-x-1/2">
             <a href="/canapes" className="text-label hover:text-secondary transition-colors">
               Canapés
             </a>
@@ -119,7 +119,7 @@ export default function Home() {
             }}
           >
             <img
-              src="https://private-us-east-1.manuscdn.com/sessionFile/kipTDJQqissckqbzLIMUU1/sandbox/OS1WirmdDyjqb8kJ9JryT1-img-1_1772014678000_na1fn_aGVyby1saXZpbmctcm9vbQ.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUva2lwVERKUXFpc3Nja3FiekxJTVVVMS9zYW5kYm94L09TMVdpcm1kRHlqcWI4a0o5SnJ5VDEtaW1nLTFfMTc3MjAxNDY3ODAwMF9uYTFmbl9hR1Z5Ynkxc2FYWnBibWN0Y205dmJRLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=BtJVsqjolFLEKeJcuOgbIiV1MxSWfEEU1BEUFTveeocTitJzx52-9LknPPpLrwoz4YSgAX1cq7wlIJvdru-5eldvjnz~pS273NX9ynHsW4fllvXP8hbHXvGhdCCshWhjovus8wcCnlpBv8Xh7-sctqRstf6A1Id6oIiFxUjAAxJ74GEI-ECpUqc1kOOn8DCpGu10TGLrQRnV-5THS3cEVAyz18HM4DtNaPMnc00MjRPw9kfB381B6jTDHGzba8lbyhp1ELbFCcoX1kEZh35lC1pEikb87pCy-Ztc5LMyH4ZMderP2HcpzkCiKHPkpeSFyG9-IjxH-CU6ethdF-MVTQ__"
+              src="https://private-us-east-1.manuscdn.com/sessionFile/kipTDJQqissckqbzLIMUU1/sandbox/OS1WirmdDyjqb8kJ9JryT1-img-1_1772014678000_na1fn_aGVyby1saXZpbmctcm9vbQ.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUva2lwVERKUXFpc3Nja3FiekxJTVVVMS9zYW5kYm94L09TMVdpcm1kRHlqcWI4a0o5SnJ5VDEtaW1nLTFfMTc3MjAxNDY3ODAwMF9uYTFmbl9hR1Z5Ynkxc2FYWnBibWN0Y201dmJRLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=BtJVsqjolFLEKeJcuOgbIiV1MxSWfEEU1BEUFTveeocTitJzx52-9LknPPpLrwoz4YSgAX1cq7wlIJvdru-5eldvjnz~pS273NX9ynHsW4fllvXP8hbHXvGhdCCshWhjovus8wcCnlpBv8Xh7-sctqRstf6A1Id6oIiFxUjAAxJ74GEI-ECpUqc1kOOn8DCpGu10TGLrQRnV-5THS3cEVAyz18HM4DtNaPMnc00MjRPw9kfB381B6jTDHGzba8lbyhp1ELbFCcoX1kEZh35lC1pEikb87pCy-Ztc5LMyH4ZMderP2HcpzkCiKHPkpeSFyG9-IjxH-CU6ethdF-MVTQ__"
               alt="Salon minimaliste luxe"
               className="w-full h-full object-cover"
             />
@@ -127,65 +127,40 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Collections Section */}
+      {/* Collections Section - Chips Filter */}
       <section className="py-20 md:py-32 bg-background">
         <div className="container">
-          <div className="mb-16">
+          <div className="mb-12">
             <p className="text-label text-secondary mb-4">Collections</p>
-            <h2 className="text-editorial">Nos Univers</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {/* Collection Card 1 */}
-            <a href="/collection/canapes" className="group cursor-pointer block">
-              <div className="relative overflow-hidden mb-6 aspect-square">
-                <img
-                  src="https://private-us-east-1.manuscdn.com/sessionFile/kipTDJQqissckqbzLIMUU1/sandbox/OS1WirmdDyjqb8kJ9JryT1-img-3_1772014671000_na1fn_Z2FsbGVyeS1jb2xsZWN0aW9u.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUva2lwVERKUXFpc3Nja3FiekxJTVVVMS9zYW5kYm94L09TMVdpcm1kRHlqcWI4a0o5SnJ5VDEtaW1nLTNfMTc3MjAxNDY3MTAwMF9uYTFmbl9aMkZzYkdWeWVTMWpiMjxzWldOMGFXOXUucG5nP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=ujLIHLyd-0ke0vI0kvAo1B4YulX0utL9GEK-h28biDb9BkTT4L3pgbF5qD1gHeAwWAWUJq7SY0QyiDxyW1FoCsJ1gbF1OcM1cSFqofXJ88Q48hvLqN-PmxS6qzlF-knmMqM5KilYDoGWBLl-yF6-o49FXzGlend4JGS3IVe6o4JyQ47szNFZMjDugb-AYrCjo9yTV77FnByT5aAfVMYZPgqigPJqj2e-Z3-oHYFHu9FHMeK0oEYuSOofesHKGtnAaUOp59lN9kkHVjUEpf-aJ5Qw10RDyTVo~65cGMvaupsqH3H3CYBhOSe2NqiJQW5le7NMIi2JyipPvVlkg1scYQ__"
-                  alt="Collection Canapés"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <h3 className="text-editorial text-xl mb-2 group-hover:text-secondary transition-colors">
+            <h2 className="text-editorial mb-8">Nos Univers</h2>
+            
+            {/* Filter Chips Bar - Luxury Premium Style */}
+            <div className="flex flex-wrap gap-3 items-center">
+              <button className="px-6 py-3 rounded-full text-sm font-medium bg-accent text-accent-foreground hover:bg-accent/90 transition-all duration-300 shadow-sm">
+                Tous
+              </button>
+              <button className="px-6 py-3 rounded-full text-sm font-medium bg-background border border-border text-foreground hover:bg-muted/50 transition-all duration-300">
                 Canapés
-              </h3>
-              <p className="text-foreground/60 text-sm">
-                Sièges de prestige pour vos espaces de vie
-              </p>
-            </a>
-
-            {/* Collection Card 2 */}
-            <a href="/collection/tables" className="group cursor-pointer block">
-              <div className="relative overflow-hidden mb-6 aspect-square">
-                <img
-                  src="https://private-us-east-1.manuscdn.com/sessionFile/kipTDJQqissckqbzLIMUU1/sandbox/OS1WirmdDyjqb8kJ9JryT1-img-4_1772014679000_na1fn_d29vZC10ZXh0dXJlLWRldGFpbA.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUva2lwVERKUXFpc3Nja3FiekxJTVVVMS9zYW5kYm94L09TMVdpcm1kRHlqcWI4a0o5SnJ5VDEtaW1nLTRfMTc3MjAxNDY3OTAwMF9uYTFmbl9kMjl2WkMxMFpYaDBkWEpsTFdSbGRHRnBiQS5wbmc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=WDd8qmQAnJRDrJujzlWxswHHtRNexWkFRx8iFOQ9HQpP43d7IT6zxS3kGItgWY2oxICGVVdL0CXLkSVNpTEDYYjaeFkORuZsQL~Iyi5TGaA7CZ5Viz8yL130bObpbyNP~D~0tKB3C2npocxpTD1AXBuaEZHkkS0uuEeshw9CJAqPWqnIslyG8Toq75plgez7hBKsi3T-ewXodZBEOFNPqK2ZlQpRuIBNkrysst9-nqUzSMNOPrQ1lMG83aUMHOM2HaoVd2vKTwVYh9avEPXr9rpg-dO9hGnhJCZ7EMxmto5~9H5ArsKb1wF0kDExtK33BmrlulRvTui~8WF1hUjxgA__"
-                  alt="Collection Tables"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <h3 className="text-editorial text-xl mb-2 group-hover:text-secondary transition-colors">
+              </button>
+              <button className="px-6 py-3 rounded-full text-sm font-medium bg-background border border-border text-foreground hover:bg-muted/50 transition-all duration-300">
                 Tables
-              </h3>
-              <p className="text-foreground/60 text-sm">
-                Pièces centrales en bois massif et matériaux nobles
-              </p>
-            </a>
-
-            {/* Collection Card 3 */}
-            <a href="/collection/chaises" className="group cursor-pointer block">
-              <div className="relative overflow-hidden mb-6 aspect-square">
-                <img
-                  src="https://private-us-east-1.manuscdn.com/sessionFile/kipTDJQqissckqbzLIMUU1/sandbox/OS1WirmdDyjqb8kJ9JryT1-img-5_1772014683000_na1fn_bWluaW1hbGlzdC1iZWRyb29t.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUva2lwVERKUXFpc3Nja3FiekxJTVVVMS9zYW5kYm94L09TMVdpcm1kRHlqcWI4a0o5SnJ5VDEtaW1nLTVfMTc3MjAxNDY4MzAwMF9uYTFmbl9iV2x1YVcxaGJHbHpkQzFpWldSeWIyOXQucG5nP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=QItGMT41XdeeOyb9dv2Sc-ZddaudTa5bTjRbCRGWA6xjb1hXtv8cyPfVnbDu4aKtoQ1GtwysN5pTTdw9UHfZ79tS-IlD62DPDRpCeyGPXaKg1wJzV~AfRTnszfxvsPdzlwS5g~~X4lCClv3HQc~oltfxYV5mw57EuZjcXKIujsbzQCQTtYHLUjI5fKhzivbQ5lJr15XtGti~M2qvcr6THpxcESpOn~0YYRe8U6DgQxOMer5~VndUxy8o387eSdZ2DzoRo8ZJDk2MmrXsmpinwuRHxm4XdD3M7BUakWGurFq1ourd~nb7FG1OT4NDu-Gmq-DRqj2lMRCokoPGWM9GVA__"
-                  alt="Collection Chaises"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <h3 className="text-editorial text-xl mb-2 group-hover:text-secondary transition-colors">
+              </button>
+              <button className="px-6 py-3 rounded-full text-sm font-medium bg-background border border-border text-foreground hover:bg-muted/50 transition-all duration-300">
                 Chaises
-              </h3>
-              <p className="text-foreground/60 text-sm">
-                Sièges de design contemporain pour tous les espaces
-              </p>
-            </a>
+              </button>
+              <button className="px-6 py-3 rounded-full text-sm font-medium bg-background border border-border text-foreground hover:bg-muted/50 transition-all duration-300">
+                Lits
+              </button>
+              <button className="px-6 py-3 rounded-full text-sm font-medium bg-background border border-border text-foreground hover:bg-muted/50 transition-all duration-300">
+                Rangements
+              </button>
+              <button className="px-6 py-3 rounded-full text-sm font-medium bg-background border border-border text-foreground hover:bg-muted/50 transition-all duration-300">
+                Luminaires
+              </button>
+              <button className="px-6 py-3 rounded-full text-sm font-medium bg-background border border-border text-foreground hover:bg-muted/50 transition-all duration-300">
+                Décoration
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -198,100 +173,153 @@ export default function Home() {
             <div className="order-2 md:order-1">
               <img
                 src="https://private-us-east-1.manuscdn.com/sessionFile/kipTDJQqissckqbzLIMUU1/sandbox/OS1WirmdDyjqb8kJ9JryT1-img-2_1772014683000_na1fn_cHJvZHVjdC1zb2ZhLWRldGFpbA.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUva2lwVERKUXFpc3Nja3FiekxJTVVVMS9zYW5kYm94L09TMVdpcm1kRHlqcWI4a0o5SnJ5VDEtaW1nLTJfMTc3MjAxNDY4MzAwMF9uYTFmbl9jSEp2WkhWamRDMXpiMjxoTFdSbGRHRnBiQS5wbmc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=dlvMmDxZKmauC7AR-nlHbgGjORH6k5Sv0FoHKQubjARO~KKM6K1ndwWA1vbR28PQNVi-9B6gDrvLMmewrk3smLZUnyyJiw8bxMsU7VaXWy4NvLKuB1iM3Jf85BiwWEJE1p-UMlzZAm6C8OvAPO-hIliVON3gaeTszJnEjr3g31WNCCLVLfsvd2DLS7b8mhz-14ycMFEJukpDTO2CWkgAe4QJfhz-~yUBmUlWmy~77SboYoETwTSJ~vqJeM5sVUwkmHwbVoVKehtuuTyHv-5S8P~~z7yHETUemWGrug1Qr5ak6R1j24~1znjgyu~B65hFYabUjJudyTvghuGLuQkqUw__"
-                alt="Détail de matière - Lin et bois"
+                alt="Détail matière - Texture bois"
                 className="w-full h-auto"
               />
             </div>
 
-            {/* Content */}
+            {/* Text Content */}
             <div className="order-1 md:order-2">
               <p className="text-label text-secondary mb-6">Matière & Artisanat</p>
-              <h2 className="text-editorial mb-8">
-                La Qualité des Détails
+              <h2 className="text-editorial mb-6">
+                Chaque détail compte
               </h2>
               <p className="text-base md:text-lg text-foreground/80 mb-6 leading-relaxed">
-                Chaque pièce Filia est conçue avec une attention extrême aux détails. Nous sélectionnons les meilleurs matériaux : bois massif de qualité supérieure, lin naturel, cuir premium.
+                Nos pièces sont le fruit d'un travail minutieux. Nous sélectionnons les meilleurs bois, les matériaux les plus nobles, et travaillons avec des artisans passionnés pour créer du mobilier intemporel.
               </p>
-              <p className="text-base md:text-lg text-foreground/80 mb-8 leading-relaxed">
-                Notre engagement envers l'artisanat traditionnel se reflète dans chaque couture, chaque finition, chaque grain de bois visible.
-              </p>
-              <a href="/collection" className="btn-premium inline-block">
-                Découvrir nos Matériaux
-                <ChevronRight className="inline ml-2" size={16} />
-              </a>
+              <ul className="space-y-3 text-sm text-foreground/70">
+                <li className="flex items-start gap-3">
+                  <span className="text-secondary mt-1">•</span>
+                  <span>Bois massif certifié et écologiquement responsable</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-secondary mt-1">•</span>
+                  <span>Finitions naturelles et non toxiques</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-secondary mt-1">•</span>
+                  <span>Assemblage artisanal selon les techniques traditionnelles</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-secondary mt-1">•</span>
+                  <span>Garantie à vie sur les défauts de fabrication</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Editorial Section - Inspirations & Conseils */}
+      <section className="py-20 md:py-32 bg-background">
+        <div className="container">
+          <div className="mb-16">
+            <p className="text-label text-secondary mb-4">Inspirations</p>
+            <h2 className="text-editorial">Conseils & Tendances</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+            {/* Article 1 */}
+            <article className="group">
+              <div className="relative overflow-hidden mb-6 aspect-video">
+                <img
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/ambiance-bedroom-warm-light-58CnTNvVvwdz2HMx8HdrBT.webp"
+                  alt="Chambre minimaliste"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+              <p className="text-label text-secondary mb-3">Bien-vivre</p>
+              <h3 className="text-editorial text-lg mb-3 group-hover:text-secondary transition-colors">
+                L'art de créer une chambre apaisante
+              </h3>
+              <p className="text-foreground/70 text-sm leading-relaxed">
+                Découvrez comment transformer votre chambre en sanctuaire de calme avec les bonnes pièces de mobilier et une palette de couleurs harmonieuse.
+              </p>
+            </article>
+
+            {/* Article 2 */}
+            <article className="group">
+              <div className="relative overflow-hidden mb-6 aspect-video">
+                <img
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/ambiance-living-room-wood-floor-NTYX3cLi77rLHZbd4QDsuR.webp"
+                  alt="Salon contemporain"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+              <p className="text-label text-secondary mb-3">Design</p>
+              <h3 className="text-editorial text-lg mb-3 group-hover:text-secondary transition-colors">
+                Minimalisme et fonctionnalité
+              </h3>
+              <p className="text-foreground/70 text-sm leading-relaxed">
+                Explorez comment le minimalisme contemporain crée des espaces de vie épurés, fonctionnels et intemporels, sans sacrifier le confort.
+              </p>
+            </article>
+
+            {/* Article 3 */}
+            <article className="group">
+              <div className="relative overflow-hidden mb-6 aspect-video">
+                <img
+                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/product-storage-cabinet-wood-4g8A35XtEfRkdDgTzBmkPB.webp"
+                  alt="Rangement bois"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+              <p className="text-label text-secondary mb-3">Matière</p>
+              <h3 className="text-editorial text-lg mb-3 group-hover:text-secondary transition-colors">
+                Le bois : matériau intemporel
+              </h3>
+              <p className="text-foreground/70 text-sm leading-relaxed">
+                Comprenez pourquoi le bois massif reste le choix privilégié des designers pour créer un mobilier durable et authentique.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
-      <footer className="bg-foreground text-background py-16 md:py-24">
+      <footer className="py-16 md:py-20 bg-muted/20 border-t border-border">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+            {/* Brand */}
             <div>
-              <h4 className="text-label mb-6">Filia</h4>
-              <p className="text-sm text-background/80 leading-relaxed">
-                Galerie de mobilier contemporain pour les intérieurs de prestige.
+              <h3 className="text-lg font-serif font-semibold mb-4">Filia</h3>
+              <p className="text-foreground/60 text-sm leading-relaxed">
+                Mobilier de prestige pour intérieurs contemporains. Chaque pièce est une invitation au bien-vivre.
               </p>
             </div>
+
+            {/* Collections */}
             <div>
-              <h4 className="text-label mb-6">Collections</h4>
-              <ul className="space-y-3 text-sm">
-                <li>
-                  <a href="/collection/canapes" className="hover:text-secondary transition-colors">
-                    Canapés
-                  </a>
-                </li>
-                <li>
-                  <a href="/collection/tables" className="hover:text-secondary transition-colors">
-                    Tables
-                  </a>
-                </li>
-                <li>
-                  <a href="/collection/chaises" className="hover:text-secondary transition-colors">
-                    Chaises
-                  </a>
-                </li>
+              <h4 className="text-sm font-semibold mb-4 text-foreground">Collections</h4>
+              <ul className="space-y-2 text-sm text-foreground/60">
+                <li><a href="/collection/canapes" className="hover:text-foreground transition-colors">Canapés</a></li>
+                <li><a href="/collection/tables" className="hover:text-foreground transition-colors">Tables</a></li>
+                <li><a href="/collection/chaises" className="hover:text-foreground transition-colors">Chaises</a></li>
               </ul>
             </div>
+
+            {/* Information */}
             <div>
-              <h4 className="text-label mb-6">Infos</h4>
-              <ul className="space-y-3 text-sm">
-                <li>
-                  <a href="#" className="hover:text-secondary transition-colors">
-                    À Propos
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-secondary transition-colors">
-                    Contact
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-secondary transition-colors">
-                    Mentions Légales
-                  </a>
-                </li>
+              <h4 className="text-sm font-semibold mb-4 text-foreground">Information</h4>
+              <ul className="space-y-2 text-sm text-foreground/60">
+                <li><a href="#" className="hover:text-foreground transition-colors">À propos</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors">Livraison</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors">Contact</a></li>
               </ul>
             </div>
+
+            {/* Legal */}
             <div>
-              <h4 className="text-label mb-6">Suivez-nous</h4>
-              <ul className="space-y-3 text-sm">
-                <li>
-                  <a href="#" className="hover:text-secondary transition-colors">
-                    Instagram
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-secondary transition-colors">
-                    Pinterest
-                  </a>
-                </li>
+              <h4 className="text-sm font-semibold mb-4 text-foreground">Légal</h4>
+              <ul className="space-y-2 text-sm text-foreground/60">
+                <li><a href="#" className="hover:text-foreground transition-colors">Conditions</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors">Confidentialité</a></li>
+                <li><a href="#" className="hover:text-foreground transition-colors">Cookies</a></li>
               </ul>
             </div>
           </div>
 
-          <div className="border-t border-background/20 pt-8 text-center text-sm text-background/60">
+          <div className="pt-8 border-t border-border text-center text-sm text-foreground/60">
             <p>&copy; 2026 Filia Appartement. Tous droits réservés.</p>
           </div>
         </div>

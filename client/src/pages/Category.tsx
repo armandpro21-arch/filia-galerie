@@ -18,7 +18,7 @@ const PRODUCTS = {
       description: "Canapé 3 places en lin naturel avec structure en chêne massif",
       price: "€3,200",
       image:
-        "https://private-us-east-1.manuscdn.com/sessionFile/kipTDJQqissckqbzLIMUU1/sandbox/OS1WirmdDyjqb8kJ9JryT1-img-1_1772014678000_na1fn_aGVyby1saXZpbmctcm9vbQ.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUva2lwVERKUXFpc3Nja3FiekxJTVVVMS9zYW5kYm94L09TMVdpcm1kRHlqcWI4a0o5SnJ5VDEtaW1nLTFfMTc3MjAxNDY3ODAwMF9uYTFmbl9hR1Z5Ynkxc2FYWnBibWN0Y205dmJRLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=BtJVsqjolFLEKeJcuOgbIiV1MxSWfEEU1BEUFTveeocTitJzx52-9LknPPpLrwoz4YSgAX1cq7wlIJvdru-5eldvjnz~pS273NX9ynHsW4fllvXP8hbHXvGhdCCshWhjovus8wcCnlpBv8Xh7-sctqRstf6A1Id6oIiFxUjAAxJ74GEI-ECpUqc1kOOn8DCpGu10TGLrQRnV-5THS3cEVAyz18HM4DtNaPMnc00MjRPw9kfB381B6jTDHGzba8lbyhp1ELbFCcoX1kEZh35lC1pEikb87pCy-Ztc5LMyH4ZMderP2HcpzkCiKHPkpeSFyG9-IjxH-CU6ethdF-MVTQ__",
+        "https://private-us-east-1.manuscdn.com/sessionFile/kipTDJQqissckqbzLIMUU1/sandbox/OS1WirmdDyjqb8kJ9JryT1-img-1_1772014678000_na1fn_aGVyby1saXZpbmctcm9vbQ.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUva2lwVERKUXFpc3Nja3FiekxJTVVVMS9zYW5kYm94L09TMVdpcm1kRHlqcWI4a0o5SnJ5VDEtaW1nLTFfMTc3MjAxNDY3ODAwMF9uYTFmbl9hR1Z5Ynkxc2FYWnBibWN0Y201dmJRLnBuZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=BtJVsqjolFLEKeJcuOgbIiV1MxSWfEEU1BEUFTveeocTitJzx52-9LknPPpLrwoz4YSgAX1cq7wlIJvdru-5eldvjnz~pS273NX9ynHsW4fllvXP8hbHXvGhdCCshWhjovus8wcCnlpBv8Xh7-sctqRstf6A1Id6oIiFxUjAAxJ74GEI-ECpUqc1kOOn8DCpGu10TGLrQRnV-5THS3cEVAyz18HM4DtNaPMnc00MjRPw9kfB381B6jTDHGzba8lbyhp1ELbFCcoX1kEZh35lC1pEikb87pCy-Ztc5LMyH4ZMderP2HcpzkCiKHPkpeSFyG9-IjxH-CU6ethdF-MVTQ__",
       materials: "Lin 100%, Chêne massif",
       dimensions: "220 × 90 × 85 cm",
     },
@@ -44,6 +44,15 @@ const PRODUCTS = {
       materials: "Chêne massif",
       dimensions: "120 × 60 × 40 cm",
     },
+    {
+      id: 5,
+      name: "Table Salle à Manger Oak",
+      description: "Table de salle à manger en chêne clair avec structure épurée",
+      price: "€2,400",
+      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/product-table-oak-minimal-iA82FHo84TXRsiMqevcrA5.webp",
+      materials: "Chêne massif, Finition naturelle",
+      dimensions: "180 × 90 × 75 cm",
+    },
   ],
   chaises: [
     {
@@ -55,6 +64,15 @@ const PRODUCTS = {
         "https://private-us-east-1.manuscdn.com/sessionFile/kipTDJQqissckqbzLIMUU1/sandbox/OS1WirmdDyjqb8kJ9JryT1-img-3_1772014671000_na1fn_Z2FsbGVyeS1jb2xsZWN0aW9u.png?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUva2lwVERKUXFpc3Nja3FiekxJTVVVMS9zYW5kYm94L09TMVdpcm1kRHlqcWI4a0o5SnJ5VDEtaW1nLTNfMTc3MjAxNDY3MTAwMF9uYTFmbl9aMkZzYkdWeWVTMWpiMjxzWldOMGFXOXUucG5nP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=ujLIHLyd-0ke0vI0kvAo1B4YulX0utL9GEK-h28biDb9BkTT4L3pgbF5qD1gHeAwWAWUJq7SY0QyiDxyW1FoCsJ1gbF1OcM1cSFqofXJ88Q48hvLqN-PmxS6qzlF-knmMqM5KilYDoGWBLl-yF6-o49FXzGlend4JGS3IVe6o4JyQ47szNFZMjDugb-AYrCjo9yTV77FnByT5aAfVMYZPgqigPJqj2e-Z3-oHYFHu9FHMeK0oEYuSOofesHKGtnAaUOp59lN9kkHVjUEpf-aJ5Qw10RDyTVo~65cGMvaupsqH3H3CYBhOSe2NqiJQW5le7NMIi2JyipPvVlkg1scYQ__",
       materials: "Chêne, Lin 100%",
       dimensions: "50 × 50 × 85 cm",
+    },
+    {
+      id: 6,
+      name: "Chaise Contemporaine Bois",
+      description: "Chaise design avec backrest organique et structure épurée",
+      price: "€850",
+      image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/product-chair-natural-wood-649so849Uuxn5PmwMk3b7R.webp",
+      materials: "Chêne massif, Finition naturelle",
+      dimensions: "55 × 52 × 82 cm",
     },
   ],
 };
@@ -101,7 +119,7 @@ export default function Category() {
             </h1>
           </div>
 
-          <p className="max-w-2xl text-base md:text-lg text-foreground/80 leading-relaxed">
+          <p className="max-w-2xl text-base md:text-lg text-foreground/80 leading-relaxed mb-12">
             Découvrez notre sélection exclusive de{" "}
             {category === "canapes"
               ? "canapés"
@@ -111,6 +129,31 @@ export default function Category() {
             haut de gamme. Chaque pièce est pensée pour créer des espaces de vie
             intemporels et confortables.
           </p>
+
+          {/* Filter Chips */}
+          <div className="flex flex-wrap gap-3 items-center">
+            <a href="/collection/canapes" className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${category === "canapes" ? "bg-primary text-primary-foreground shadow-md" : "bg-muted text-foreground hover:bg-muted/80 border border-border"}`}>
+              Tous
+            </a>
+            <a href="/collection/canapes" className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${category === "canapes" ? "bg-primary text-primary-foreground shadow-md" : "bg-muted text-foreground hover:bg-muted/80 border border-border"}`}>
+              Canapés
+            </a>
+            <a href="/collection/tables" className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${category === "tables" ? "bg-primary text-primary-foreground shadow-md" : "bg-muted text-foreground hover:bg-muted/80 border border-border"}`}>
+              Télévisions
+            </a>
+            <a href="/collection/tables" className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${category === "tables" ? "bg-primary text-primary-foreground shadow-md" : "bg-muted text-foreground hover:bg-muted/80 border border-border"}`}>
+              Tables
+            </a>
+            <a href="/collection/chaises" className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${category === "chaises" ? "bg-primary text-primary-foreground shadow-md" : "bg-muted text-foreground hover:bg-muted/80 border border-border"}`}>
+              Chaises
+            </a>
+            <button className="px-5 py-2.5 rounded-full text-sm font-medium bg-muted text-foreground hover:bg-muted/80 border border-border transition-all duration-300">
+              Lits
+            </button>
+            <button className="px-5 py-2.5 rounded-full text-sm font-medium bg-muted text-foreground hover:bg-muted/80 border border-border transition-all duration-300">
+              Rangements
+            </button>
+          </div>
         </div>
       </section>
 
