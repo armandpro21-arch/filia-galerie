@@ -9,17 +9,95 @@ import { ChevronRight, ShoppingBag, Search, Menu, X } from "lucide-react";
  * - Compositions asymétriques avec espaces généreux
  * - Narration produit et détails matière
  * - Interactions fluides et révélations au scroll
+ * - Système de filtrage discret et élégant pour les univers
  */
+
+// Données des univers avec catégories
+const UNIVERS_DATA = [
+  {
+    id: 1,
+    name: "Salon Minimal",
+    description: "Canapé crème, table chêne clair, lumière généreuse",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-salon-minimal_b1a21b17.png",
+    categories: ["tous", "canapés", "tables", "matières", "bois-clair"]
+  },
+  {
+    id: 2,
+    name: "Chambre Apaisée",
+    description: "Lit bois, lin blanc, atmosphère sereine",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-chambre-apaisee_2a07bb46.png",
+    categories: ["tous", "lits", "matières"]
+  },
+  {
+    id: 3,
+    name: "Matières Naturelles",
+    description: "Bois, lin, céramique, textures tactiles",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-matieres-naturelles_42cfcee3.png",
+    categories: ["tous", "matières", "bois-clair"]
+  },
+  {
+    id: 4,
+    name: "Bois Clair",
+    description: "Salle à manger contemporaine, rangements",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-bois-clair_1166c0c8.png",
+    categories: ["tous", "tables", "chaises", "rangements", "bois-clair"]
+  },
+  {
+    id: 5,
+    name: "Intérieur Lumineux",
+    description: "Baies vitrées, lumière inondante",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-interieur-lumineux_6d530b15.png",
+    categories: ["tous", "canapés", "tables"]
+  },
+  {
+    id: 6,
+    name: "Ligne Contemporaine",
+    description: "Art géométrique, formes épurées",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-ligne-contemporaine_b1eda3db.png",
+    categories: ["tous", "chaises", "tables"]
+  },
+  {
+    id: 7,
+    name: "Collection Essentielle",
+    description: "Pièces curées, minimalisme intentionnel",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-collection-essentielle_94e5a031.png",
+    categories: ["tous", "canapés", "tables", "chaises"]
+  },
+  {
+    id: 8,
+    name: "Espace Travail",
+    description: "Bureau minimaliste, lumière naturelle",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-espace-travail_253bbfe6.png",
+    categories: ["tous", "rangements", "tables"]
+  }
+];
+
+const CATEGORIES = [
+  { id: "tous", label: "Tous" },
+  { id: "canapés", label: "Canapés" },
+  { id: "tables", label: "Tables" },
+  { id: "chaises", label: "Chaises" },
+  { id: "lits", label: "Lits" },
+  { id: "rangements", label: "Rangements" },
+  { id: "matières", label: "Matières" },
+  { id: "bois-clair", label: "Bois clair" }
+];
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+  const [activeCategory, setActiveCategory] = useState("tous");
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Filtrer les univers selon la catégorie active
+  const filteredUnivers = UNIVERS_DATA.filter(univers =>
+    univers.categories.includes(activeCategory)
+  );
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -127,7 +205,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Collections Section - Editorial Gallery */}
+      {/* Collections Section - Editorial Gallery with Filtering */}
       <section className="py-20 md:py-32 bg-background">
         <div className="container">
           <div className="mb-16">
@@ -135,112 +213,50 @@ export default function Home() {
             <h2 className="text-editorial mb-12">Nos Univers</h2>
           </div>
 
-          {/* Editorial Gallery Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Univers 1: Salon Minimal */}
-            <article className="group cursor-pointer">
-              <div className="relative overflow-hidden mb-6 aspect-square">
-                <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-salon-minimal_b1a21b17.png"
-                  alt="Salon Minimal"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <h3 className="text-lg font-serif font-semibold mb-2 group-hover:text-secondary transition-colors">Salon Minimal</h3>
-              <p className="text-foreground/60 text-sm">Canapé crème, table chêne clair, lumière généreuse</p>
-            </article>
-
-            {/* Univers 2: Chambre Apaisée */}
-            <article className="group cursor-pointer">
-              <div className="relative overflow-hidden mb-6 aspect-square">
-                <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-chambre-apaisee_2a07bb46.png"
-                  alt="Chambre Apaisée"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <h3 className="text-lg font-serif font-semibold mb-2 group-hover:text-secondary transition-colors">Chambre Apaisée</h3>
-              <p className="text-foreground/60 text-sm">Lit bois, lin blanc, atmosphère sereine</p>
-            </article>
-
-            {/* Univers 3: Matières Naturelles */}
-            <article className="group cursor-pointer">
-              <div className="relative overflow-hidden mb-6 aspect-square">
-                <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-matieres-naturelles_42cfcee3.png"
-                  alt="Matières Naturelles"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <h3 className="text-lg font-serif font-semibold mb-2 group-hover:text-secondary transition-colors">Matières Naturelles</h3>
-              <p className="text-foreground/60 text-sm">Bois, lin, céramique, textures tactiles</p>
-            </article>
-
-            {/* Univers 4: Bois Clair */}
-            <article className="group cursor-pointer">
-              <div className="relative overflow-hidden mb-6 aspect-square">
-                <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-bois-clair_1166c0c8.png"
-                  alt="Bois Clair"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <h3 className="text-lg font-serif font-semibold mb-2 group-hover:text-secondary transition-colors">Bois Clair</h3>
-              <p className="text-foreground/60 text-sm">Salle à manger contemporaine, rangements</p>
-            </article>
-
-            {/* Univers 5: Intérieur Lumineux */}
-            <article className="group cursor-pointer">
-              <div className="relative overflow-hidden mb-6 aspect-square">
-                <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-interieur-lumineux_6d530b15.png"
-                  alt="Intérieur Lumineux"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <h3 className="text-lg font-serif font-semibold mb-2 group-hover:text-secondary transition-colors">Intérieur Lumineux</h3>
-              <p className="text-foreground/60 text-sm">Baies vitrées, lumière inondante</p>
-            </article>
-
-            {/* Univers 6: Ligne Contemporaine */}
-            <article className="group cursor-pointer">
-              <div className="relative overflow-hidden mb-6 aspect-square">
-                <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-ligne-contemporaine_b1eda3db.png"
-                  alt="Ligne Contemporaine"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <h3 className="text-lg font-serif font-semibold mb-2 group-hover:text-secondary transition-colors">Ligne Contemporaine</h3>
-              <p className="text-foreground/60 text-sm">Art géométrique, formes épurées</p>
-            </article>
-
-            {/* Univers 7: Collection Essentielle */}
-            <article className="group cursor-pointer">
-              <div className="relative overflow-hidden mb-6 aspect-square">
-                <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-collection-essentielle_94e5a031.png"
-                  alt="Collection Essentielle"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <h3 className="text-lg font-serif font-semibold mb-2 group-hover:text-secondary transition-colors">Collection Essentielle</h3>
-              <p className="text-foreground/60 text-sm">Pièces curées, minimalisme intentionnel</p>
-            </article>
-
-            {/* Univers 8: Espace Travail */}
-            <article className="group cursor-pointer">
-              <div className="relative overflow-hidden mb-6 aspect-square">
-                <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-espace-travail_253bbfe6.png"
-                  alt="Espace Travail"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <h3 className="text-lg font-serif font-semibold mb-2 group-hover:text-secondary transition-colors">Espace Travail</h3>
-              <p className="text-foreground/60 text-sm">Bureau minimaliste, lumière naturelle</p>
-            </article>
+          {/* Category Filter - Chips Filia Style */}
+          <div className="mb-12 overflow-x-auto pb-2 -mx-6 px-6 md:mx-0 md:px-0">
+            <div className="flex gap-3 md:gap-4 min-w-min md:min-w-0 md:flex-wrap">
+              {CATEGORIES.map((category) => (
+                <button
+                  key={category.id}
+                  onClick={() => setActiveCategory(category.id)}
+                  className={`px-5 md:px-6 py-2.5 md:py-3 rounded-full font-medium text-sm md:text-base transition-all duration-300 whitespace-nowrap flex-shrink-0 md:flex-shrink ${
+                    activeCategory === category.id
+                      ? "bg-secondary text-background border border-secondary shadow-sm"
+                      : "bg-muted/40 text-foreground border border-border/50 hover:bg-muted/60 hover:border-border"
+                  }`}
+                >
+                  {category.label}
+                </button>
+              ))}
+            </div>
           </div>
+
+          {/* Editorial Gallery Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 transition-all duration-500">
+            {filteredUnivers.map((univers) => (
+              <article key={univers.id} className="group cursor-pointer animate-fadeIn">
+                <div className="relative overflow-hidden mb-6 aspect-square">
+                  <img
+                    src={univers.image}
+                    alt={univers.name}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <h3 className="text-lg font-serif font-semibold mb-2 group-hover:text-secondary transition-colors">
+                  {univers.name}
+                </h3>
+                <p className="text-foreground/60 text-sm">{univers.description}</p>
+              </article>
+            ))}
+          </div>
+
+          {/* Empty State */}
+          {filteredUnivers.length === 0 && (
+            <div className="text-center py-12">
+              <p className="text-foreground/60">Aucun univers trouvé pour cette catégorie.</p>
+            </div>
+          )}
         </div>
       </section>
 
@@ -359,47 +375,39 @@ export default function Home() {
       <footer className="py-16 md:py-20 bg-muted/20 border-t border-border">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-            {/* Brand */}
             <div>
-              <h3 className="text-lg font-serif font-semibold mb-4">Filia</h3>
-              <p className="text-foreground/60 text-sm leading-relaxed">
+              <h4 className="font-serif font-semibold mb-6">Filia</h4>
+              <p className="text-foreground/70 text-sm leading-relaxed">
                 Mobilier de prestige pour intérieurs contemporains. Chaque pièce est une invitation au bien-vivre.
               </p>
             </div>
-
-            {/* Collections */}
             <div>
-              <h4 className="text-sm font-semibold mb-4 text-foreground">Collections</h4>
-              <ul className="space-y-2 text-sm text-foreground/60">
-                <li><a href="/collection/canapes" className="hover:text-foreground transition-colors">Canapés</a></li>
-                <li><a href="/collection/tables" className="hover:text-foreground transition-colors">Tables</a></li>
-                <li><a href="/collection/chaises" className="hover:text-foreground transition-colors">Chaises</a></li>
+              <h5 className="font-semibold text-sm mb-4">Collections</h5>
+              <ul className="space-y-2 text-sm text-foreground/70">
+                <li><a href="/canapes" className="hover:text-secondary transition-colors">Canapés</a></li>
+                <li><a href="/tables" className="hover:text-secondary transition-colors">Tables</a></li>
+                <li><a href="/chaises" className="hover:text-secondary transition-colors">Chaises</a></li>
               </ul>
             </div>
-
-            {/* Information */}
             <div>
-              <h4 className="text-sm font-semibold mb-4 text-foreground">Information</h4>
-              <ul className="space-y-2 text-sm text-foreground/60">
-                <li><a href="#" className="hover:text-foreground transition-colors">À propos</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">Livraison</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">Contact</a></li>
+              <h5 className="font-semibold text-sm mb-4">Information</h5>
+              <ul className="space-y-2 text-sm text-foreground/70">
+                <li><a href="#" className="hover:text-secondary transition-colors">À propos</a></li>
+                <li><a href="#" className="hover:text-secondary transition-colors">Livraison</a></li>
+                <li><a href="#" className="hover:text-secondary transition-colors">Contact</a></li>
               </ul>
             </div>
-
-            {/* Legal */}
             <div>
-              <h4 className="text-sm font-semibold mb-4 text-foreground">Légal</h4>
-              <ul className="space-y-2 text-sm text-foreground/60">
-                <li><a href="#" className="hover:text-foreground transition-colors">Conditions</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">Confidentialité</a></li>
-                <li><a href="#" className="hover:text-foreground transition-colors">Cookies</a></li>
+              <h5 className="font-semibold text-sm mb-4">Légal</h5>
+              <ul className="space-y-2 text-sm text-foreground/70">
+                <li><a href="#" className="hover:text-secondary transition-colors">Conditions</a></li>
+                <li><a href="#" className="hover:text-secondary transition-colors">Confidentialité</a></li>
+                <li><a href="#" className="hover:text-secondary transition-colors">Cookies</a></li>
               </ul>
             </div>
           </div>
-
-          <div className="pt-8 border-t border-border text-center text-sm text-foreground/60">
-            <p>&copy; 2026 Filia Appartement. Tous droits réservés.</p>
+          <div className="border-t border-border pt-8 text-center text-sm text-foreground/60">
+            <p>© 2026 Filia Appartement. Tous droits réservés.</p>
           </div>
         </div>
       </footer>
