@@ -43,37 +43,37 @@
 }
 
 :root {
-  /* Premium Luxury Palette */
+  /* Premium Luxury Palette - Refined for Linen Brand */
   --primary: #1a1a1a;
-  --primary-foreground: #f9f7f2;
-  --secondary: #d4c5b9;
+  --primary-foreground: #fafaf8;
+  --secondary: #c9b8a8;
   --secondary-foreground: #1a1a1a;
-  --accent: #8b7d73;
-  --accent-foreground: #f9f7f2;
-  --muted: #e8e3dd;
+  --accent: #a89080;
+  --accent-foreground: #fafaf8;
+  --muted: #ede8e2;
   --muted-foreground: #6b6560;
   --destructive: #c1121f;
-  --destructive-foreground: #f9f7f2;
-  --border: #d9cfc4;
-  --input: #f0ebe5;
-  --ring: #8b7d73;
-  --background: #f9f7f2;
+  --destructive-foreground: #fafaf8;
+  --border: #ddd4cc;
+  --input: #f5f0eb;
+  --ring: #a89080;
+  --background: #fafaf8;
   --foreground: #1a1a1a;
   --card: #ffffff;
   --card-foreground: #1a1a1a;
   --popover: #ffffff;
   --popover-foreground: #1a1a1a;
-  --sidebar: #f9f7f2;
+  --sidebar: #fafaf8;
   --sidebar-foreground: #1a1a1a;
   --sidebar-primary: #1a1a1a;
-  --sidebar-primary-foreground: #f9f7f2;
-  --sidebar-accent: #d4c5b9;
+  --sidebar-primary-foreground: #fafaf8;
+  --sidebar-accent: #c9b8a8;
   --sidebar-accent-foreground: #1a1a1a;
-  --sidebar-border: #d9cfc4;
-  --sidebar-ring: #8b7d73;
-  --chart-1: #8b7d73;
-  --chart-2: #d4c5b9;
-  --chart-3: #e8e3dd;
+  --sidebar-border: #ddd4cc;
+  --sidebar-ring: #a89080;
+  --chart-1: #a89080;
+  --chart-2: #c9b8a8;
+  --chart-3: #ede8e2;
   --chart-4: #c1121f;
   --chart-5: #6b6560;
   --radius: 0px;
@@ -120,6 +120,7 @@
     @apply bg-background text-foreground;
     font-family: var(--font-sans);
     letter-spacing: 0.3px;
+    scroll-behavior: smooth;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -251,5 +252,155 @@
 
   .animate-fadeIn {
     animation: fadeIn 0.4s ease-out;
+  }
+
+  /* Scroll Animations */
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Utility Classes */
+  .animate-slideInUp {
+    animation: slideInUp 0.6s ease-out;
+  }
+
+  .animate-slideInDown {
+    animation: slideInDown 0.6s ease-out;
+  }
+
+  .animate-slideInLeft {
+    animation: slideInLeft 0.6s ease-out;
+  }
+
+  .animate-slideInRight {
+    animation: slideInRight 0.6s ease-out;
+  }
+
+  .animate-fadeInScale {
+    animation: fadeInScale 0.6s ease-out;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Hover Effects */
+  .hover-lift {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-[0_0_20px_rgba(201,184,168,0.3)];
+  }
+
+  /* Text Effects */
+  .text-gradient {
+    background: linear-gradient(135deg, #1a1a1a 0%, #6b6560 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Backdrop Effects */
+  .backdrop-blur-xl {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  /* Smooth Scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Selection Styling */
+  ::selection {
+    background-color: var(--secondary);
+    color: var(--background);
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--background);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--secondary);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
   }
 }

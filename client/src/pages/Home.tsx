@@ -1,92 +1,129 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "wouter";
-import { ChevronRight, ShoppingBag, Search, Menu, X } from "lucide-react";
+import { ChevronRight, ShoppingBag, Search, Menu, X, ArrowDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 /**
- * Direction Artistique: Galerie de Design Contemporain
- * - Minimalisme chaleureux avec bois clair et tons neutres
- * - Typographie éditoriale élégante (Playfair Display + Montserrat)
- * - Compositions asymétriques avec espaces généreux
- * - Narration produit et détails matière
- * - Interactions fluides et révélations au scroll
- * - Système de filtrage discret et élégant pour les univers
+ * FILIA GALERIE - Luxury Linen Home Store
+ * Direction Artistique: Minimalisme luxueux, éditoriale, immersif
+ * 
+ * Éléments clés:
+ * - Animations cinématiques fluides
+ * - Micro-interactions élégantes
+ * - Parallaxe moderne subtil
+ * - Transitions sophistiquées
+ * - Effets de révélation au scroll
+ * - Typographie premium (Playfair Display + Montserrat)
+ * - Palette: Blanc, Beige, Crème, Gris clair, touches d'or
  */
 
-// Données des univers avec catégories
-const UNIVERS_DATA = [
+// Données des collections
+const COLLECTIONS = [
   {
     id: 1,
-    name: "Salon Minimal",
-    description: "Canapé crème, table chêne clair, lumière généreuse",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-salon-minimal_b1a21b17.png",
-    categories: ["tous", "canapés", "tables", "matières", "bois-clair"]
+    name: "Linge de Lit Premium",
+    description: "Draps en coton égyptien, housses de couette luxe",
+    image: "/images/hero.jpg",
+    category: "bedding"
   },
   {
     id: 2,
-    name: "Chambre Apaisée",
-    description: "Lit bois, lin blanc, atmosphère sereine",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-chambre-apaisee_2a07bb46.png",
-    categories: ["tous", "lits", "matières"]
+    name: "Serviettes Spa",
+    description: "Serviettes de bain premium, peignoirs de luxe",
+    image: "/images/bath.jpg",
+    category: "bath"
   },
   {
     id: 3,
-    name: "Matières Naturelles",
-    description: "Bois, lin, céramique, textures tactiles",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-matieres-naturelles_42cfcee3.png",
-    categories: ["tous", "matières", "bois-clair"]
+    name: "Textiles d'Intérieur",
+    description: "Plaids, coussins, textiles de décoration",
+    image: "/images/detail.jpg",
+    category: "home"
   },
   {
     id: 4,
-    name: "Bois Clair",
-    description: "Salle à manger contemporaine, rangements",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-bois-clair_1166c0c8.png",
-    categories: ["tous", "tables", "chaises", "rangements", "bois-clair"]
-  },
-  {
-    id: 5,
-    name: "Intérieur Lumineux",
-    description: "Baies vitrées, lumière inondante",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-interieur-lumineux_6d530b15.png",
-    categories: ["tous", "canapés", "tables"]
-  },
-  {
-    id: 6,
-    name: "Ligne Contemporaine",
-    description: "Art géométrique, formes épurées",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-ligne-contemporaine_b1eda3db.png",
-    categories: ["tous", "chaises", "tables"]
-  },
-  {
-    id: 7,
-    name: "Collection Essentielle",
-    description: "Pièces curées, minimalisme intentionnel",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-collection-essentielle_94e5a031.png",
-    categories: ["tous", "canapés", "tables", "chaises"]
-  },
-  {
-    id: 8,
-    name: "Espace Travail",
-    description: "Bureau minimaliste, lumière naturelle",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-espace-travail_253bbfe6.png",
-    categories: ["tous", "rangements", "tables"]
+    name: "Collection Showroom",
+    description: "Pièces d'exception, éditions limitées",
+    image: "/images/showroom.jpg",
+    category: "collection"
   }
 ];
 
-const CATEGORIES = [
-  { id: "tous", label: "Tous" },
-  { id: "canapés", label: "Canapés" },
-  { id: "tables", label: "Tables" },
-  { id: "chaises", label: "Chaises" },
-  { id: "lits", label: "Lits" },
-  { id: "rangements", label: "Rangements" },
-  { id: "matières", label: "Matières" },
-  { id: "bois-clair", label: "Bois clair" }
+const TESTIMONIALS = [
+  {
+    id: 1,
+    text: "La qualité exceptionnelle de ces textiles a transformé mon expérience quotidienne. Chaque détail respire le luxe.",
+    author: "Marie Dubois",
+    role: "Architecte d'intérieur"
+  },
+  {
+    id: 2,
+    text: "Un savoir-faire inégalé. Les draps sont d'une douceur incomparable, les finitions impeccables.",
+    author: "Jean Leclerc",
+    role: "Collectionneur"
+  },
+  {
+    id: 3,
+    text: "Filia Galerie redéfinit le luxe accessible. Chaque produit est une œuvre d'art.",
+    author: "Sophie Martin",
+    role: "Designer"
+  }
 ];
+
+const FEATURES = [
+  {
+    title: "Coton Égyptien Premium",
+    description: "Les plus belles fibres du monde, sélectionnées avec soin pour leur douceur incomparable."
+  },
+  {
+    title: "Teinture Naturelle",
+    description: "Processus de teinture écologique respectant l'environnement et la peau."
+  },
+  {
+    title: "Coutures Artisanales",
+    description: "Chaque pièce est finalisée à la main par nos artisans spécialisés."
+  },
+  {
+    title: "Durabilité Garantie",
+    description: "Conçus pour durer des années, nos textiles gagnent en douceur avec le temps."
+  }
+];
+
+// Animation variants
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" }
+  }
+};
+
+const titleVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 1, ease: "easeOut" }
+  }
+};
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
-  const [activeCategory, setActiveCategory] = useState("tous");
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const heroRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -94,320 +131,541 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Filtrer les univers selon la catégorie active
-  const filteredUnivers = UNIVERS_DATA.filter(univers =>
-    univers.categories.includes(activeCategory)
-  );
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      {/* Navigation Premium */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-        <div className="container flex items-center justify-between py-6">
-          <a href="/" className="text-xl md:text-2xl font-serif font-bold tracking-tight hover:opacity-80 transition-opacity" style={{fontFamily: 'Bodoni'}}>
-            Filia appartement furnitures
-          </a>
+    <div className="min-h-screen bg-background text-foreground overflow-hidden">
+      {/* Navigation Premium - Sticky with Backdrop Blur */}
+      <motion.nav 
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/30"
+      >
+        <div className="container flex items-center justify-between py-5">
+          {/* Logo */}
+          <motion.a 
+            href="/" 
+            className="text-xl md:text-2xl font-serif font-light tracking-widest hover:opacity-70 transition-opacity"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            FILIA GALERIE
+          </motion.a>
 
-          {/* Desktop Navigation - Centered */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-12 absolute left-1/2 transform -translate-x-1/2">
-            <a href="/canapes" className="text-label hover:text-secondary transition-colors">
-              Canapés
-            </a>
-            <a href="/tables" className="text-label hover:text-secondary transition-colors">
-              Tables
-            </a>
-            <a href="/chaises" className="text-label hover:text-secondary transition-colors">
-              Chaises
-            </a>
-            <a href="/collection" className="text-label hover:text-secondary transition-colors">
-              Collection
-            </a>
+            {["Linge de Lit", "Bain", "Décoration", "Collection"].map((item) => (
+              <motion.a
+                key={item}
+                href="#"
+                className="text-sm font-light tracking-wide text-foreground/70 hover:text-foreground transition-colors relative group"
+                whileHover={{ color: "#1a1a1a" }}
+              >
+                {item}
+                <motion.div
+                  className="absolute bottom-0 left-0 h-px bg-foreground"
+                  initial={{ width: 0 }}
+                  whileHover={{ width: "100%" }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.a>
+            ))}
           </div>
 
           {/* Icons */}
           <div className="flex items-center gap-6">
-            <button className="p-2 hover:bg-muted rounded-full transition-colors">
-              <Search size={20} />
-            </button>
-            <button className="p-2 hover:bg-muted rounded-full transition-colors">
-              <ShoppingBag size={20} />
-            </button>
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden p-2 hover:bg-muted rounded-full transition-colors"
+            <motion.button 
+              className="p-2 hover:bg-muted/40 rounded-full transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
             >
-              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
-            </button>
+              <Search size={18} className="text-foreground/70" />
+            </motion.button>
+            <motion.button 
+              className="p-2 hover:bg-muted/40 rounded-full transition-colors relative"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <ShoppingBag size={18} className="text-foreground/70" />
+              <span className="absolute top-1 right-1 w-2 h-2 bg-secondary rounded-full" />
+            </motion.button>
+            <motion.button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden p-2 hover:bg-muted/40 rounded-full transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {isMenuOpen ? <X size={18} /> : <Menu size={18} />}
+            </motion.button>
           </div>
         </div>
 
         {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden border-t border-border bg-background">
-            <div className="container py-6 space-y-4">
-              <a href="/canapes" className="block text-label hover:text-secondary transition-colors">
-                Canapés
-              </a>
-              <a href="/tables" className="block text-label hover:text-secondary transition-colors">
-                Tables
-              </a>
-              <a href="/chaises" className="block text-label hover:text-secondary transition-colors">
-                Chaises
-              </a>
-              <a href="/collection" className="block text-label hover:text-secondary transition-colors">
-                Collection
-              </a>
-            </div>
-          </div>
-        )}
-      </nav>
-
-      {/* Hero Section - Immersive */}
-      <section className="pt-32 pb-0 md:pt-40 relative overflow-hidden">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 items-stretch">
-          {/* Left: Editorial Content */}
-          <div className="flex flex-col justify-center px-6 md:px-12 py-16 md:py-32 bg-background">
-            <div className="max-w-md">
-              <p className="text-label text-secondary mb-6">
-                Édition Galerie
-              </p>
-              <h1 className="text-editorial mb-6 leading-tight">
-                L'intégrale de la maison
-              </h1>
-              <p className="text-base md:text-lg text-foreground/80 mb-8 leading-relaxed">
-                Découvrez notre collection exclusive de mobilier contemporain. Chaque pièce est une œuvre de design minimaliste, pensée pour créer des espaces de vie intemporels.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href="/collection" className="btn-premium text-center">
-                  Découvrir
-                  <ChevronRight className="inline ml-2" size={16} />
-                </a>
-                <button className="btn-premium-secondary">
-                  Explorer les Nouveautés
-                </button>
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden border-t border-border/30 bg-background/95 backdrop-blur-xl"
+            >
+              <div className="container py-6 space-y-4">
+                {["Linge de Lit", "Bain", "Décoration", "Collection"].map((item) => (
+                  <motion.a
+                    key={item}
+                    href="#"
+                    className="block text-sm font-light tracking-wide text-foreground/70 hover:text-foreground transition-colors"
+                    whileHover={{ x: 8 }}
+                  >
+                    {item}
+                  </motion.a>
+                ))}
               </div>
-            </div>
-          </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.nav>
 
-          {/* Right: Hero Image */}
-          <div
-            className="relative h-96 md:h-auto md:min-h-screen overflow-hidden"
-            style={{
-              transform: `translateY(${scrollY * 0.3}px)`,
-            }}
-          >
-            <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/univers-salon-minimal_b1a21b17.png"
-              alt="Salon minimaliste luxe"
-              className="w-full h-full object-cover"
-            />
+      {/* Hero Section - Immersive with Parallax */}
+      <section 
+        ref={heroRef}
+        className="relative pt-32 pb-0 md:pt-40 min-h-screen flex items-center overflow-hidden"
+      >
+        {/* Background Image with Parallax */}
+        <motion.div
+          className="absolute inset-0 z-0"
+          style={{
+            y: scrollY * 0.5
+          }}
+        >
+          <img
+            src="/images/hero.jpg"
+            alt="Chambre luxe avec linge premium"
+            className="w-full h-full object-cover"
+          />
+          {/* Overlay Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/40 to-transparent" />
+        </motion.div>
+
+        {/* Content */}
+        <div className="container relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            {/* Left: Editorial Content */}
+            <motion.div
+              className="max-w-xl"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              <motion.p 
+                className="text-label text-secondary mb-6 tracking-widest"
+                variants={itemVariants}
+              >
+                ÉDITION GALERIE
+              </motion.p>
+
+              <motion.h1 
+                className="text-5xl md:text-7xl font-serif font-light leading-tight mb-8 text-foreground"
+                variants={titleVariants}
+              >
+                Luxe & Confort
+              </motion.h1>
+
+              <motion.p 
+                className="text-lg md:text-xl text-foreground/80 mb-10 leading-relaxed font-light"
+                variants={itemVariants}
+              >
+                Découvrez notre collection exclusive de linge de maison premium. Chaque pièce est une célébration du savoir-faire artisanal et de la qualité intemporelle.
+              </motion.p>
+
+              <motion.div 
+                className="flex flex-col sm:flex-row gap-6"
+                variants={itemVariants}
+              >
+                <motion.button
+                  className="px-8 py-4 border border-foreground text-foreground font-light tracking-wider text-sm hover:bg-foreground hover:text-background transition-all duration-300"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  DÉCOUVRIR
+                  <ChevronRight className="inline ml-2" size={16} />
+                </motion.button>
+                <motion.button
+                  className="px-8 py-4 border border-secondary text-secondary font-light tracking-wider text-sm hover:bg-secondary hover:text-background transition-all duration-300"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  COLLECTION
+                </motion.button>
+              </motion.div>
+            </motion.div>
+
+            {/* Right: Decorative Element */}
+            <motion.div
+              className="hidden md:block relative h-96"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.3 }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-transparent rounded-full blur-3xl" />
+              <motion.div
+                className="absolute inset-0 border border-secondary/30 rounded-full"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              />
+            </motion.div>
           </div>
         </div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
+          <ArrowDown size={20} className="text-foreground/50" />
+        </motion.div>
       </section>
 
-      {/* Collections Section - Editorial Gallery with Filtering */}
-      <section className="py-20 md:py-32 bg-background">
+      {/* Collections Section - Grid with Hover Effects */}
+      <section className="py-24 md:py-32 bg-background relative">
         <div className="container">
-          <div className="mb-16">
-            <p className="text-label text-secondary mb-4">Collections</p>
-            <h2 className="text-editorial mb-12">Nos Univers</h2>
-          </div>
+          <motion.div
+            className="mb-16 md:mb-24"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <p className="text-label text-secondary mb-6 tracking-widest">NOS COLLECTIONS</p>
+            <h2 className="text-5xl md:text-6xl font-serif font-light">
+              Univers de Luxe
+            </h2>
+          </motion.div>
 
-          {/* Category Filter - Chips Filia Style */}
-          <div className="mb-12 overflow-x-auto pb-2 -mx-6 px-6 md:mx-0 md:px-0">
-            <div className="flex gap-3 md:gap-4 min-w-min md:min-w-0 md:flex-wrap">
-              {CATEGORIES.map((category) => (
-                <button
-                  key={category.id}
-                  onClick={() => setActiveCategory(category.id)}
-                  className={`px-5 md:px-6 py-2.5 md:py-3 rounded-full font-medium text-sm md:text-base transition-all duration-300 whitespace-nowrap flex-shrink-0 md:flex-shrink ${
-                    activeCategory === category.id
-                      ? "bg-secondary text-background border border-secondary shadow-sm"
-                      : "bg-muted/40 text-foreground border border-border/50 hover:bg-muted/60 hover:border-border"
-                  }`}
-                >
-                  {category.label}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Editorial Gallery Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 transition-all duration-500">
-            {filteredUnivers.map((univers) => (
-              <article key={univers.id} className="group cursor-pointer animate-fadeIn">
-                <div className="relative overflow-hidden mb-6 aspect-square">
-                  <img
-                    src={univers.image}
-                    alt={univers.name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          {/* Collections Grid */}
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {COLLECTIONS.map((collection, index) => (
+              <motion.div
+                key={collection.id}
+                className="group cursor-pointer"
+                variants={itemVariants}
+                whileHover={{ y: -8 }}
+              >
+                {/* Image Container with Overlay */}
+                <div className="relative overflow-hidden mb-8 aspect-square rounded-sm">
+                  <motion.img
+                    src={collection.image}
+                    alt={collection.name}
+                    className="w-full h-full object-cover"
+                    whileHover={{ scale: 1.08 }}
+                    transition={{ duration: 0.6 }}
+                  />
+                  {/* Overlay */}
+                  <motion.div
+                    className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"
+                    initial={{ opacity: 0 }}
+                    whileHover={{ opacity: 1 }}
                   />
                 </div>
-                <h3 className="text-lg font-serif font-semibold mb-2 group-hover:text-secondary transition-colors">
-                  {univers.name}
+
+                {/* Content */}
+                <motion.h3 
+                  className="text-2xl md:text-3xl font-serif font-light mb-3 group-hover:text-secondary transition-colors duration-300"
+                  initial={{ opacity: 0.8 }}
+                  whileHover={{ opacity: 1 }}
+                >
+                  {collection.name}
+                </motion.h3>
+                <p className="text-foreground/70 font-light leading-relaxed">
+                  {collection.description}
+                </p>
+
+                {/* CTA Link */}
+                <motion.div
+                  className="mt-6 flex items-center gap-2 text-secondary font-light tracking-wide text-sm"
+                  initial={{ opacity: 0, x: -10 }}
+                  whileHover={{ opacity: 1, x: 0 }}
+                >
+                  EXPLORER
+                  <motion.span
+                    animate={{ x: [0, 4, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                  >
+                    <ChevronRight size={16} />
+                  </motion.span>
+                </motion.div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Features Section - Premium Materials & Craftsmanship */}
+      <section className="py-24 md:py-32 bg-muted/30 relative overflow-hidden">
+        <div className="container">
+          <motion.div
+            className="mb-16 md:mb-24"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <p className="text-label text-secondary mb-6 tracking-widest">SAVOIR-FAIRE</p>
+            <h2 className="text-5xl md:text-6xl font-serif font-light">
+              Excellence & Qualité
+            </h2>
+          </motion.div>
+
+          {/* Features Grid */}
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {FEATURES.map((feature, index) => (
+              <motion.div
+                key={index}
+                className="relative p-8 border border-border/50 hover:border-secondary/50 transition-colors duration-300 group"
+                variants={itemVariants}
+                whileHover={{ y: -4 }}
+              >
+                {/* Background Gradient on Hover */}
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent rounded-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"
+                />
+
+                {/* Number */}
+                <div className="text-5xl font-serif font-light text-secondary/20 mb-4">
+                  {String(index + 1).padStart(2, "0")}
+                </div>
+
+                {/* Content */}
+                <h3 className="text-lg font-serif font-light mb-4 group-hover:text-secondary transition-colors duration-300">
+                  {feature.title}
                 </h3>
-                <p className="text-foreground/60 text-sm">{univers.description}</p>
-              </article>
+                <p className="text-foreground/70 font-light leading-relaxed text-sm">
+                  {feature.description}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Gallery Section - Immersive Showcase */}
+      <section className="py-24 md:py-32 bg-background relative">
+        <div className="container">
+          <motion.div
+            className="mb-16 md:mb-24"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <p className="text-label text-secondary mb-6 tracking-widest">GALERIE</p>
+            <h2 className="text-5xl md:text-6xl font-serif font-light">
+              Mise en Scène
+            </h2>
+          </motion.div>
+
+          {/* Gallery Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { src: "/images/bedding.jpg", title: "Linge de Lit" },
+              { src: "/images/bath.jpg", title: "Collection Bain" },
+              { src: "/images/towels.png", title: "Serviettes Premium" }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                className="relative overflow-hidden aspect-square group cursor-pointer"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                whileHover={{ scale: 1.02 }}
+              >
+                <motion.img
+                  src={item.src}
+                  alt={item.title}
+                  className="w-full h-full object-cover"
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.6 }}
+                />
+
+                {/* Overlay */}
+                <motion.div
+                  className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-end"
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                >
+                  <motion.div
+                    className="p-8 w-full"
+                    initial={{ y: 20, opacity: 0 }}
+                    whileHover={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <p className="text-white font-light text-lg tracking-wide">
+                      {item.title}
+                    </p>
+                  </motion.div>
+                </motion.div>
+              </motion.div>
             ))}
           </div>
-
-          {/* Empty State */}
-          {filteredUnivers.length === 0 && (
-            <div className="text-center py-12">
-              <p className="text-foreground/60">Aucun univers trouvé pour cette catégorie.</p>
-            </div>
-          )}
         </div>
       </section>
 
-      {/* Editorial Section - Material Focus */}
-      <section className="py-20 md:py-32 bg-muted/30">
+      {/* Testimonials Section - Premium Reviews */}
+      <section className="py-24 md:py-32 bg-muted/20 relative overflow-hidden">
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
-            {/* Image */}
-            <div className="order-2 md:order-1">
-              <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/product-sofa-detail_ff94bbe4.png"
-                alt="Détail matière - Texture bois"
-                className="w-full h-auto"
-              />
-            </div>
+          <motion.div
+            className="mb-16 md:mb-24"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <p className="text-label text-secondary mb-6 tracking-widest">TÉMOIGNAGES</p>
+            <h2 className="text-5xl md:text-6xl font-serif font-light">
+              Avis Clients
+            </h2>
+          </motion.div>
 
-            {/* Text Content */}
-            <div className="order-1 md:order-2">
-              <p className="text-label text-secondary mb-6">Matière & Artisanat</p>
-              <h2 className="text-editorial mb-6">
-                Chaque détail compte
-              </h2>
-              <p className="text-base md:text-lg text-foreground/80 mb-6 leading-relaxed">
-                Nos pièces sont le fruit d'un travail minutieux. Nous sélectionnons les meilleurs bois, les matériaux les plus nobles, et travaillons avec des artisans passionnés pour créer du mobilier intemporel.
-              </p>
-              <ul className="space-y-3 text-sm text-foreground/70">
-                <li className="flex items-start gap-3">
-                  <span className="text-secondary mt-1">•</span>
-                  <span>Bois massif certifié et écologiquement responsable</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-secondary mt-1">•</span>
-                  <span>Finitions naturelles et non toxiques</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-secondary mt-1">•</span>
-                  <span>Assemblage artisanal selon les techniques traditionnelles</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-secondary mt-1">•</span>
-                  <span>Garantie à vie sur les défauts de fabrication</span>
-                </li>
-              </ul>
-            </div>
-          </div>
+          {/* Testimonials Grid */}
+          <motion.div
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {TESTIMONIALS.map((testimonial) => (
+              <motion.div
+                key={testimonial.id}
+                className="p-8 bg-background border border-border/50 hover:border-secondary/50 transition-colors duration-300"
+                variants={itemVariants}
+                whileHover={{ y: -4 }}
+              >
+                {/* Quote Mark */}
+                <div className="text-5xl font-serif text-secondary/30 mb-4">"</div>
+
+                {/* Text */}
+                <p className="text-foreground/80 font-light leading-relaxed mb-8 italic">
+                  {testimonial.text}
+                </p>
+
+                {/* Author */}
+                <div className="border-t border-border/30 pt-6">
+                  <p className="font-serif font-light text-foreground mb-1">
+                    {testimonial.author}
+                  </p>
+                  <p className="text-secondary font-light text-sm tracking-wide">
+                    {testimonial.role}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
-      {/* Editorial Section - Inspirations & Conseils */}
-      <section className="py-20 md:py-32 bg-background">
+      {/* CTA Section - Final Call to Action */}
+      <section className="py-24 md:py-32 bg-background relative overflow-hidden">
         <div className="container">
-          <div className="mb-16">
-            <p className="text-label text-secondary mb-4">Inspirations</p>
-            <h2 className="text-editorial">Conseils & Tendances</h2>
-          </div>
+          <motion.div
+            className="max-w-3xl mx-auto text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <p className="text-label text-secondary mb-6 tracking-widest">REJOIGNEZ-NOUS</p>
+            <h2 className="text-5xl md:text-6xl font-serif font-light mb-8">
+              Vivez l'Expérience Filia
+            </h2>
+            <p className="text-lg text-foreground/70 font-light mb-12 leading-relaxed">
+              Explorez notre collection complète et découvrez comment le luxe peut transformer votre quotidien.
+            </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {/* Article 1 */}
-            <article className="group">
-              <div className="relative overflow-hidden mb-6 aspect-video">
-                <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/ambiance-bedroom-warm-light_84d966b4.png"
-                  alt="Chambre minimaliste"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <p className="text-label text-secondary mb-3">Bien-vivre</p>
-              <h3 className="text-editorial text-lg mb-3 group-hover:text-secondary transition-colors">
-                L'art de créer une chambre apaisante
-              </h3>
-              <p className="text-foreground/70 text-sm leading-relaxed">
-                Découvrez comment transformer votre chambre en sanctuaire de calme avec les bonnes pièces de mobilier et une palette de couleurs harmonieuse.
-              </p>
-            </article>
-
-            {/* Article 2 */}
-            <article className="group">
-              <div className="relative overflow-hidden mb-6 aspect-video">
-                <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/ambiance-living-room-wood-floor_30c2f836.png"
-                  alt="Salon contemporain"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <p className="text-label text-secondary mb-3">Design</p>
-              <h3 className="text-editorial text-lg mb-3 group-hover:text-secondary transition-colors">
-                Minimalisme et fonctionnalité
-              </h3>
-              <p className="text-foreground/70 text-sm leading-relaxed">
-                Explorez comment le minimalisme contemporain crée des espaces de vie épurés, fonctionnels et intemporels, sans sacrifier le confort.
-              </p>
-            </article>
-
-            {/* Article 3 */}
-            <article className="group">
-              <div className="relative overflow-hidden mb-6 aspect-video">
-                <img
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663379758806/6tqxTVYkRiTYpg4sbwvNVb/product-storage-cabinet-wood_6446dd49.png"
-                  alt="Rangement bois"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-              </div>
-              <p className="text-label text-secondary mb-3">Matière</p>
-              <h3 className="text-editorial text-lg mb-3 group-hover:text-secondary transition-colors">
-                Le bois : matériau intemporel
-              </h3>
-              <p className="text-foreground/70 text-sm leading-relaxed">
-                Comprenez pourquoi le bois massif reste le choix privilégié des designers pour créer un mobilier durable et authentique.
-              </p>
-            </article>
-          </div>
+            <motion.button
+              className="px-12 py-4 border border-foreground text-foreground font-light tracking-wider text-sm hover:bg-foreground hover:text-background transition-all duration-300"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              ACCÉDER À LA BOUTIQUE
+            </motion.button>
+          </motion.div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-16 md:py-20 bg-muted/20 border-t border-border">
+      <footer className="border-t border-border/30 bg-background py-12">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <div>
-              <h4 className="font-serif font-semibold mb-6">Filia</h4>
-              <p className="text-foreground/70 text-sm leading-relaxed">
-                Mobilier de prestige pour intérieurs contemporains. Chaque pièce est une invitation au bien-vivre.
+              <p className="font-serif font-light text-lg mb-4">FILIA GALERIE</p>
+              <p className="text-foreground/60 font-light text-sm">
+                Linge de maison premium depuis 2020
               </p>
             </div>
             <div>
-              <h5 className="font-semibold text-sm mb-4">Collections</h5>
-              <ul className="space-y-2 text-sm text-foreground/70">
-                <li><a href="/canapes" className="hover:text-secondary transition-colors">Canapés</a></li>
-                <li><a href="/tables" className="hover:text-secondary transition-colors">Tables</a></li>
-                <li><a href="/chaises" className="hover:text-secondary transition-colors">Chaises</a></li>
+              <p className="text-label text-secondary mb-6 tracking-widest">COLLECTIONS</p>
+              <ul className="space-y-3">
+                {["Linge de Lit", "Bain", "Décoration", "Éditions Limitées"].map((item) => (
+                  <li key={item}>
+                    <a href="#" className="text-foreground/70 font-light text-sm hover:text-foreground transition-colors">
+                      {item}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
             <div>
-              <h5 className="font-semibold text-sm mb-4">Information</h5>
-              <ul className="space-y-2 text-sm text-foreground/70">
-                <li><a href="#" className="hover:text-secondary transition-colors">À propos</a></li>
-                <li><a href="#" className="hover:text-secondary transition-colors">Livraison</a></li>
-                <li><a href="#" className="hover:text-secondary transition-colors">Contact</a></li>
+              <p className="text-label text-secondary mb-6 tracking-widest">SUPPORT</p>
+              <ul className="space-y-3">
+                {["À Propos", "Livraison", "Retours", "Contact"].map((item) => (
+                  <li key={item}>
+                    <a href="#" className="text-foreground/70 font-light text-sm hover:text-foreground transition-colors">
+                      {item}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
             <div>
-              <h5 className="font-semibold text-sm mb-4">Légal</h5>
-              <ul className="space-y-2 text-sm text-foreground/70">
-                <li><a href="#" className="hover:text-secondary transition-colors">Conditions</a></li>
-                <li><a href="#" className="hover:text-secondary transition-colors">Confidentialité</a></li>
-                <li><a href="#" className="hover:text-secondary transition-colors">Cookies</a></li>
+              <p className="text-label text-secondary mb-6 tracking-widest">SUIVEZ-NOUS</p>
+              <ul className="space-y-3">
+                {["Instagram", "Pinterest", "Facebook", "LinkedIn"].map((item) => (
+                  <li key={item}>
+                    <a href="#" className="text-foreground/70 font-light text-sm hover:text-foreground transition-colors">
+                      {item}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
-          <div className="border-t border-border pt-8 text-center text-sm text-foreground/60">
-            <p>© 2026 Filia Appartement. Tous droits réservés.</p>
+
+          <div className="border-t border-border/30 pt-8">
+            <p className="text-foreground/50 font-light text-sm text-center">
+              © 2026 Filia Galerie. Tous droits réservés.
+            </p>
           </div>
         </div>
       </footer>
